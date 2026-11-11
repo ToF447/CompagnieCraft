@@ -1,6 +1,6 @@
 # CompagnieCraft
 
-Des outils pour trouver où jouer, préparer les candidatures et travailler en troupe. Le service hébergé est préparé autour d’une participation annuelle, d’un accès solidaire et de contributions reconnues par Christophe. Aucun tarif n’est publié et aucun paiement n’est activé ; les outils ne sont pas vendus par module. Le [code open source](https://github.com/ToF447/compagniecraft) est disponible gratuitement sous AGPL-3.0. Le trésor, c’est l’échange humain.
+Des outils pour trouver où jouer, préparer les candidatures et travailler en troupe. Le service hébergé est préparé autour d’une participation annuelle, d’un accès solidaire et de contributions reconnues par l’équipe du projet. Aucun tarif n’est publié et aucun paiement n’est activé ; les outils ne sont pas vendus par module. Le [code open source](https://github.com/ToF447/compagniecraft) est disponible gratuitement sous AGPL-3.0. Le trésor, c’est l’échange humain.
 
 ## Développer et reprendre le projet
 
@@ -18,7 +18,7 @@ node preview-source-worker.mjs
 
 Ouvrir `http://127.0.0.1:4334/`, puis utiliser **admin / admin** pour la démonstration. Aucune donnée confidentielle ne doit être saisie dans cette démonstration. Le Worker local permet les recherches publiques ; les services d’équipe nécessitent leur stockage et leur authentification propres.
 
-Le dépôt de distribution ne contient ni historique de développement ni configuration du Site personnel. La construction locale utilise `.openai/hosting.example.json`. Pour publier votre propre Site, enregistrez un projet distinct et créez votre propre `.openai/hosting.json` ; ne réutilisez pas l’identité du Site de la compagnie.
+Le dépôt de distribution ne contient ni historique de développement ni configuration du Site personnel. La construction locale utilise `config/worker.example.json` et ne contient aucun identifiant de plateforme. Pour une mise en ligne, configurez votre propre hébergement ; ne réutilisez pas l’identité du site de la compagnie.
 
 Pour le paquet PHP : `node prepare-hostinger.cjs`, puis suivre [backend/DEPLOY.md](backend/DEPLOY.md). Les connexions réelles et MySQL doivent être validés sur un hébergement distinct. GitHub Pages seul ne peut pas exécuter PHP ni les services Worker.
 

@@ -7,7 +7,7 @@ Décision du 11 novembre 2026. Cette décision remplace la présentation d’un 
 - Logiciel libre : objectif de code complet accessible, installation et adaptation possibles, avec documentation. Le dépôt public est disponible à https://github.com/ToF447/compagniecraft sous AGPL-3.0-only, avec documentation et crédits des ressources tierces.
 - Service hébergé : participation annuelle pour éviter aux utilisateurs la gestion de l’installation et de l’entretien. Les fonctionnalités ne sont pas vendues par module. Les outils optionnels restent des choix d’usage.
 - Accès solidaire : possibilité d’accès gratuit ou réduit pour les troupes sans moyens, selon des modalités à définir.
-- Contributions : informations vérifiées, tests, documentation ou code pourront donner droit à un an de service hébergé, attribué par Christophe. La contribution reste volontaire, sans obligation de travail gratuit et sans droit automatique à une invitation.
+- Contributions : informations vérifiées, tests, documentation ou code pourront donner droit à un an de service hébergé, attribué par l’équipe du projet. La contribution reste volontaire, sans obligation de travail gratuit et sans droit automatique à une invitation.
 - Le Chapeau 🎩 : soutien financier volontaire, supplémentaire, sans fonctionnalité exclusive.
 - Ressources communes : consultation gratuite avec compte selon les parcours prévus ; contributions publiques distinctes des dossiers et échanges privés des troupes.
 - « Les Coulisses » désigne un espace du projet, jamais une collection d’outils payants.
@@ -20,8 +20,8 @@ La participation doit financer l’hébergement, les sauvegardes, la maintenance
 | --- | --- | --- |
 | Participation annuelle | Décider montant et forme : fixe avec exemptions, prix libre conseillé ou combinaison. Définir renouvellement, information et sortie du service avant tout raccordement de paiement. | Non décidé ; aucun paiement activé |
 | Accès solidaire | Demande privée, décision humaine, durée et renouvellement expliqués. Ne pas afficher de justificatifs dans le collectif. | Modalités à définir |
-| Invitation pour contribution | Christophe examine la contribution et attribue explicitement un an. Prévoir dates de début et de fin, historique de décision, prévention des doublons et information sur le renouvellement. Aucune attribution automatique au dépôt d’une contribution. | Parcours à développer ; les invitations de membres existantes ne constituent pas un droit de service annuel |
-| Publications communautaires | Prévoir une proposition en attente, la validation ou correction par Christophe, puis la publication. Conserver l’auteur, la source, la date de vérification et un moyen de signalement. | Modération du dispositif à développer et vérifier sur chaque backend ; ne pas présenter toutes les contributions actuelles comme modérées |
+| Invitation pour contribution | L’équipe du projet examine la contribution et attribue explicitement un an. Prévoir dates de début et de fin, historique de décision, prévention des doublons et information sur le renouvellement. Aucune attribution automatique au dépôt d’une contribution. | Parcours à développer ; les invitations de membres existantes ne constituent pas un droit de service annuel |
+| Publications communautaires | Prévoir une proposition en attente, la validation ou correction par l’équipe du projet, puis la publication. Conserver l’auteur, la source, la date de vérification et un moyen de signalement. | Modération du dispositif à développer et vérifier sur chaque backend ; ne pas présenter toutes les contributions actuelles comme modérées |
 | Transparence | Publier un bilan compréhensible des dépenses et du financement, sans exposer de données individuelles. | Format et périodicité à définir |
 | Récupération des données | Maintenir les exports et l’isolation des espaces, expliquer comment quitter le service. | Export CSV structuré existant ; parcours complet de sortie à préciser |
 

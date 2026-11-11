@@ -6,7 +6,7 @@ Le code original est sous AGPL-3.0-only. Les ressources tierces conservent leurs
 
 ## Première publication
 
-La distribution publique part d’un instantané contrôlé des sources actuelles, avec un nouvel historique Git. Elle exclut la configuration `.openai/hosting.json` du Site personnel, les fichiers ignorés, sessions, bases, exports, archives et dépendances installées. L’exemple générique `.openai/hosting.example.json` permet de construire le Worker pour un essai local.
+La distribution publique part d’un instantané contrôlé des sources actuelles, avec un nouvel historique Git. Elle exclut la configuration d’hébergement personnelle, les fichiers ignorés, sessions, bases, exports, archives et dépendances installées. L’exemple générique `config/worker.example.json` permet de construire le Worker pour un essai local.
 
 La commande `node scripts/prepare-github-export.cjs` prépare cet instantané dans `.runtime/github-public` et refuse d’écraser un export existant. Elle ne publie rien. Vérifier l’export, lancer les contrôles, puis initialiser et publier son propre dépôt. Le dépôt Sites d’origine et son historique ne doivent pas devenir le remote du dépôt public.
 

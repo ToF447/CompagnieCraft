@@ -1,6 +1,6 @@
 # Licences et attributions
 
-Copyright © 2026 Christophe (ToF447) et les contributeurs de CompagnieCraft.
+Copyright © 2026 ToF447 et les contributeurs de CompagnieCraft.
 
 Le code original et la documentation originale du projet sont distribués sous **GNU Affero General Public License version 3 uniquement**, identifiant SPDX `AGPL-3.0-only`. Le texte intégral figure dans [LICENSE](LICENSE). Le logiciel est fourni sans garantie ; les conditions complètes de la licence font foi.
 

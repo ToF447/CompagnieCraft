@@ -173,7 +173,9 @@ views['atelier-partage'] = () => {
   if (s.loginRequired)
     return (
       html +
-      '<section class="panel"><h2>Votre identité personnelle est nécessaire</h2><p>admin/admin ouvre la démo. Pour les textes privés, chaque personne utilise son propre compte d’accès au site.</p><a class="primary" href="/signin-with-chatgpt?return_to=%2F%23atelier-partage" target="_top">Se connecter à mon compte d’accès au site →</a></section>'
+      '<section class="panel"><h2>Votre identité personnelle est nécessaire</h2><p>admin/admin ouvre la démo. Pour les textes privés, chaque personne utilise son propre compte d’accès au site.</p><a class="primary" href="' +
+      esc(siteSignInHref('#atelier-partage')) +
+      '" target="_top">Se connecter à mon compte d’accès au site →</a></section>'
     );
   if (!s.ready)
     return (

@@ -13,3 +13,6 @@ window.ATELIER_VENUES_ENDPOINT = '/api/venues/search';
 window.ATELIER_MUSIC_ENDPOINT = '/api/music/search';
 window.ATELIER_BACKUP_ENDPOINT = '/api/backup';
 window.ATELIER_IMPRO_ENDPOINT = '/api/impro/examples';
+
+// Adapter for the existing hosted preview; omitted from the standalone PHP package.
+window.ATELIER_SIGN_IN_ENDPOINT = '/signin-with-chatgpt';

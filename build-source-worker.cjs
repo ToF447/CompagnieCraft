@@ -146,7 +146,7 @@ fs.writeFileSync(
 // The generic example is enough for local builds; register your own Site before
 // deploying and put its actual configuration in .openai/hosting.json.
 fs.copyFileSync(
-  fs.existsSync('.openai/hosting.json') ? '.openai/hosting.json' : '.openai/hosting.example.json',
+  fs.existsSync('.openai/hosting.json') ? '.openai/hosting.json' : 'config/worker.example.json',
   'dist/.openai/hosting.json',
 );
 console.log(
