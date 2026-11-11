@@ -2,11 +2,9 @@
 
 Ce guide décrit le code présent, pas une promesse de service terminé. L’historique des étapes est conservé dans [history.md](history.md).
 
-## Intention du projet
+## État de cette version
 
-Un logiciel libre pour les petites troupes : trouver des lieux et des dates, préparer les candidatures, suivre les échanges et travailler ensemble. Le partage communautaire est volontaire. La facturation est facultative. L’application ne nécessite aucune conversation avec une IA pour fonctionner.
-
-La publication Sites et le site de la compagnie sont deux applications distinctes. Ne jamais déployer CompagnieCraft par-dessus l’admin de la compagnie.
+Le dépôt contient une version de développement, une démonstration locale et deux implémentations serveur dont les fonctions diffèrent. La démonstration ne crée pas de comptes réels et ne remplace pas une installation serveur configurée.
 
 ## Installer les outils de contribution
 
@@ -82,4 +80,4 @@ Lire `MODULES.md` puis `ARCHITECTURE.md`. Déclarer les routes, dépendances et 
 
 Ne jamais versionner secrets, configurations remplies, exports privés, bases, sessions ou identifiants. Conserver les contrôles d’appartenance côté serveur pour chaque lecture et écriture. Les notes de troupe ne doivent pas être envoyées aux sources publiques. Ne pas transformer un vérificateur à domaines bornés en proxy d’URL arbitraires.
 
-Les commandes `npm run check`, `build-source-worker.cjs` et `prepare-hostinger.cjs` ne publient rien. Publier séparément après validation, avec sauvegarde, conservation de l’audience et vérification de la destination. Le dépôt comporte un workflow GitHub de contrôles locaux ; les recherches réseau réelles et l’installation Hostinger doivent être vérifiées séparément.
+Les commandes `npm run check`, `build-source-worker.cjs` et `prepare-hostinger.cjs` ne publient rien. Publier séparément après validation, avec sauvegarde, conservation de l’audience et vérification de la destination. Les contrôles locaux ne valident pas à eux seuls les recherches réseau réelles ni une installation de production.

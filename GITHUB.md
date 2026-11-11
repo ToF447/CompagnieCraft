@@ -1,19 +1,28 @@
-# Distribution GitHub de CompagnieCraft
+# Le dépôt CompagnieCraft
 
-Dépôt public : https://github.com/ToF447/compagniecraft — première publication le 11 novembre 2026.
+Le [dépôt public](https://github.com/ToF447/compagniecraft) contient le code source et la documentation de la version de développement.
 
-Le code original est sous AGPL-3.0-only. Les ressources tierces conservent leurs licences et crédits : voir LICENSE et NOTICE.md. Le modèle commun est décrit dans MODELE-ECONOMIQUE.md : aucun tarif publié, aucun paiement activé, aucune vente par module.
+## Contenu
 
-## Première publication
+- `dist/` : sources de l’interface.
+- `worker/` et `backend/` : implémentations des services serveur, dont les périmètres diffèrent.
+- `scripts/` et `check-*` : outils de construction et de contrôle.
+- `docs/` : documentation technique.
 
-La distribution publique part d’un instantané contrôlé des sources actuelles, avec un nouvel historique Git. Elle exclut la configuration d’hébergement personnelle, les fichiers ignorés, sessions, bases, exports, archives et dépendances installées. L’exemple générique `config/worker.example.json` permet de construire le Worker pour un essai local.
+Les fichiers générés, dépendances installées, sessions, bases de données, exports privés et secrets ne font pas partie de la distribution.
 
-La commande `node scripts/prepare-github-export.cjs` prépare cet instantané dans `.runtime/github-public` et refuse d’écraser un export existant. Elle ne publie rien. Vérifier l’export, lancer les contrôles, puis initialiser et publier son propre dépôt. Le dépôt Sites d’origine et son historique ne doivent pas devenir le remote du dépôt public.
+## Utilisation
 
-## Installation et contrôles
+Le [README](README.md) explique comment lancer la démonstration locale. Les identifiants admin/admin servent uniquement à cette démonstration.
 
-Suivre le démarrage local du README. Les contrôles se lancent avec `npm run check` ; ajouter `-- --php` pour les API PHP et définir `ATELIER_PHP` si nécessaire. Le modèle de CI fourni dans `docs/ci/github-actions.yml` utilise Node.js 22 et PHP/PDO SQLite. Il reste à activer avec une session autorisée à modifier les workflows ; voir `docs/ci/README.md`. Un contrôle local ne signifie pas que GitHub Actions a déjà été exécuté.
+Un hébergement statique seul ne peut pas exécuter les services serveur. Le paquet PHP possède ses propres instructions dans [backend/DEPLOY.md](backend/DEPLOY.md) ; il ne couvre pas toutes les fonctions du serveur JavaScript.
 
-Le frontend statique peut être servi séparément, mais GitHub Pages ne fait tourner ni PHP ni le Worker. Le paquet Hostinger exige une installation distincte avec configuration privée et validation MySQL. Le mode hors ligne complet, l’équivalence de tous les services entre Sites et PHP et les dispositifs solidaires décrits ne doivent pas être présentés comme terminés.
+## Contrôles
 
-Les fichiers `dist/` sont des sources maintenues. `dist/server/` et `hostinger-package/` sont générés. Le projet ne nécessite aucune conversation avec une IA pour fonctionner.
+`npm run check` lance les vérifications locales. Les vérifications PHP s’ajoutent avec `npm run check -- --php` et les prérequis du guide de reprise.
+
+Un modèle GitHub Actions est fourni dans [docs/ci/](docs/ci/README.md). Il n’est pas activé dans ce dépôt.
+
+## Licence
+
+Le code original est sous AGPL-3.0-only. Les ressources tierces gardent leurs licences et crédits : voir [LICENSE](LICENSE) et [NOTICE.md](NOTICE.md).
