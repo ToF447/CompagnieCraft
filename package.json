@@ -1,0 +1,15 @@
+{
+  "name": "compagniecraft",
+  "private": true,
+  "description": "Outils de développement uniquement ; l’application reste utilisable sans npm.",
+  "scripts": {
+    "check": "node scripts/check-project.cjs",
+    "format": "node scripts/format-source.cjs",
+    "format:check": "node scripts/format-source.cjs --check"
+  },
+  "devDependencies": {
+    "acorn": "8.15.0",
+    "prettier": "3.6.2"
+  },
+  "license": "AGPL-3.0-only"
+}

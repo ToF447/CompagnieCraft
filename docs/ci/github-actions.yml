@@ -1,0 +1,22 @@
+name: Vérifications de CompagnieCraft
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Vérifier la lisibilité et la syntaxe
+        run: npm run format:check
+      - name: Vérifier PHP SQLite
+        run: php -r "if (!extension_loaded('pdo_sqlite')) exit(1);"
+      - name: Tous les contrôles locaux et API fictives
+        env:
+          ATELIER_PHP: php
+        run: npm run check -- --php

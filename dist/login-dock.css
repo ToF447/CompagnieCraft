@@ -1,0 +1,12 @@
+.project-login-dock-toggle,.project-login-dock-close{display:none}
+html[data-project-locked][data-login-docked] #project-login{position:fixed;z-index:70;top:20px;right:max(20px,calc((100vw - 1440px)/2 + 20px));width:340px;max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;margin:0;padding:24px;background:var(--ui-paper);border:1px solid var(--ui-border);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.12);scroll-margin-top:20px}
+html[data-project-locked][data-login-docked] #project-code,html[data-project-locked][data-login-docked] #project-conditions,html[data-project-locked][data-login-docked] .project-entry-access,html[data-project-locked][data-login-docked] .project-entry-footer{padding-right:380px;box-sizing:border-box}
+html[data-project-locked][data-login-docked] .project-entry-access{grid-template-columns:minmax(0,1fr)}
+@media(max-width:1000px){
+ html[data-project-locked][data-login-docked] #project-code,html[data-project-locked][data-login-docked] #project-conditions,html[data-project-locked][data-login-docked] .project-entry-access,html[data-project-locked][data-login-docked] .project-entry-footer{padding-right:0}
+ html[data-project-locked][data-login-docked] .project-entry-access{grid-template-columns:minmax(0,1fr)}
+ html[data-project-locked][data-login-docked]:not([data-login-dock-open]) #project-login{position:static;width:auto;max-height:none;overflow:visible;box-shadow:none;margin:0;padding:24px}
+ html[data-project-locked][data-login-docked] .project-login-dock-toggle{display:inline-flex;position:fixed;right:16px;top:16px;z-index:71;min-height:44px;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+ html[data-project-locked][data-login-docked][data-login-dock-open] #project-login{top:72px;right:16px;width:min(340px,calc(100vw - 32px));max-height:calc(100dvh - 88px);padding-top:48px}
+ html[data-project-locked][data-login-docked][data-login-dock-open] .project-login-dock-close{display:grid;place-items:center;position:absolute;top:8px;right:8px;width:36px;height:36px;min-height:36px;border:0;background:transparent;color:var(--ui-text);font-size:24px}
+}

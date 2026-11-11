@@ -1,0 +1,58 @@
+/* The approved artwork, framed without stretching or changing its lettering. */
+html[data-theme] .brand .cc-art-logo,
+html[data-theme] .project-entry-brand .cc-art-logo,
+html[data-theme] .account-entry-brand .cc-art-logo,
+.cc-art-logo {
+  position: relative;
+  display: block !important;
+  flex: none;
+  width: 150px;
+  height: 84px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transform: none;
+}
+.cc-art-logo img {
+  position: absolute;
+  display: block;
+  width: 108%;
+  max-width: none;
+  height: auto;
+  left: -4%;
+  top: -20%;
+  object-fit: contain;
+}
+html[data-theme] .app-bar .brand { gap: 0; }
+html[data-theme] .app-bar .brand .cc-art-logo { width: 120px; height: 67px; }
+html[data-theme] .project-entry-brand .cc-art-logo,
+html[data-theme] .account-entry-brand .cc-art-logo { width: 190px; height: 106px; }
+@media (max-width: 740px) {
+  html[data-theme] .app-bar .brand .cc-art-logo { width: 100px; height: 56px; }
+  html[data-theme] .project-entry-brand .cc-art-logo,
+  html[data-theme] .account-entry-brand .cc-art-logo { width: 145px; height: 81px; }
+}
+
+/* The artwork floats directly on the photos; no heading, panel or banner wash. */
+.scene-mosaic::after { content:none; background:none; }
+html[data-theme] .scene-caption {
+ display:block; padding:0; border:0; border-radius:0; background:transparent;
+ color:inherit; text-shadow:none; bottom:14px;
+ transform:translate3d(0,var(--scene-logo-drift,0px),0);
+}
+html[data-theme] .scene-caption .cc-art-logo {
+ width:240px; height:134px; max-width:none; margin:0; background:transparent;
+ filter:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
+}
+html[data-theme] .app-bar .brand { display:none; }
+html[data-ui-banner=hidden] .app-bar .brand { display:flex; }
+@media(max-width:720px){
+ .scene-mosaic .scene-photo { border-radius:14px; }
+ html[data-theme] .scene-caption .cc-art-logo { width:170px; height:95px; }
+}
+@media(prefers-reduced-motion:reduce){
+ html[data-theme] .scene-caption { transform:none; }
+}

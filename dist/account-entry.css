@@ -1,0 +1,155 @@
+.account-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 480px);
+  gap: 70px;
+  align-items: start;
+  max-width: 1150px;
+  margin: 35px auto;
+  color: var(--ui-text);
+}
+body[data-route="connexion"] :is(.scene-banner,.demo,.main>header){display:none}
+.account-entry-intro {
+  padding: 15px 0;
+}
+.account-entry-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ui-accent);
+  text-decoration: none;
+  margin-bottom: 60px;
+  font:
+    28px Caveat,
+    serif;
+}
+.account-entry-brand strong {
+  font:
+    600 22px Source,
+    Arial,
+    sans-serif;
+  color: var(--ui-text);
+}
+.account-entry-intro h1 {
+  font: 400 clamp(36px, 4vw, 55px) / 1.12 var(--ui-heading);
+  color: var(--ui-text);
+  letter-spacing: -1.6px;
+  margin: 20px 0 26px;
+}
+.account-entry-intro p {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 570px;
+  color: var(--ui-muted);
+}
+.account-entry-intro ul {
+  padding-left: 20px;
+  margin: 30px 0;
+  line-height: 1.7;
+  font-size: 16px;
+}
+.account-entry-intro li {
+  padding: 6px 0;
+}
+.account-entry-card {
+  padding: 30px;
+  background: var(--ui-paper);
+  border: 1px solid var(--ui-border);
+  border-radius: 10px;
+}
+.account-entry-card h2 {
+  font: 400 29px/1.2 var(--ui-heading);
+  color: var(--ui-text);
+  margin: 26px 0 15px;
+}
+.account-entry-card form label {
+  font-size: 15px;
+  color: var(--ui-text);
+  margin: 18px 0;
+}
+.account-entry-card input,
+.account-entry-card select {
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  border: 1px solid var(--ui-border);
+  padding: 12px;
+  width: 100%;
+  min-height: 46px;
+  border-radius: 5px;
+}
+.account-entry-tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--ui-border);
+}
+.account-entry-tabs button {
+  padding: 0 0 12px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--ui-muted);
+  font:
+    600 16px Source,
+    Arial,
+    sans-serif;
+}
+.account-entry-tabs button[aria-selected="true"] {
+  border-bottom-color: var(--ui-accent);
+  color: var(--ui-text);
+}
+.account-entry-card fieldset {
+  padding: 0;
+  border: 0;
+  margin: 22px 0;
+  min-width: 0;
+}
+.account-entry-card fieldset[hidden] {
+  display: none;
+}
+.account-entry-card legend {
+  font-size: 13px;
+  color: var(--ui-muted);
+}
+.account-entry-card .primary {
+  min-height: 46px;
+  background: var(--ui-accent);
+  color: var(--ui-on-accent);
+  border-color: var(--ui-accent);
+}
+.account-entry-card .primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+#account-register-error,
+#server-login-error {
+  color: var(--ui-danger);
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+#server-gate:has(.account-entry) {
+  background: var(--ui-bg);
+  display: block;
+  padding: 35px;
+}
+@media (max-width: 850px) {
+  .account-entry {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 560px;
+    margin: 10px auto;
+  }
+  .account-entry-brand {
+    margin-bottom: 25px;
+  }
+  .account-entry-intro h1 {
+    font-size: 40px;
+  }
+  .account-entry-intro ul {
+    display: none;
+  }
+  .account-entry-card {
+    padding: 24px;
+  }
+  #server-gate:has(.account-entry) {
+    padding: 24px 18px;
+  }
+}

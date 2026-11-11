@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1793487600000,
+      "tag": "0000_collective",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1793493000000,
+      "tag": "0001_user_preferences",
+      "breakpoints": true
+    },
+    {
+      "breakpoints": true,
+      "version": "6",
+      "tag": "0002_feedback",
+      "idx": 2,
+      "when": 1793499000000
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "breakpoints": true,
+      "tag": "0003_interface_preferences",
+      "when": 1793505000000
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1793732400000,
+      "tag": "0004_private_team",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1793737500000,
+      "tag": "0005_opportunities",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1793738100000,
+      "tag": "0006_opportunity_parser",
+      "breakpoints": true
+    }
+  ]
+}

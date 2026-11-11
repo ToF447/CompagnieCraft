@@ -1,0 +1,80 @@
+[
+  {
+    "id": "scene-new-1",
+    "group": "theatre",
+    "src": "assets/scenes-libres/scene-new-1.webp",
+    "alt": "Ruy Blas dans les Arènes de Montmartre",
+    "caption": "Ruy Blas dans les Arènes de Montmartre",
+    "credit": "Xenophon75",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Repr%C3%A9sentation_de_Ruy_Blas_dans_les_Ar%C3%A8nes_de_Montmartre.JPG",
+    "title": "Représentation de Ruy Blas dans les Arènes de Montmartre.JPG",
+    "position": "50% 35%"
+  },
+  {
+    "id": "scene-new-2",
+    "group": "rue",
+    "src": "assets/scenes-libres/scene-new-2.webp",
+    "alt": "Théâtre de rue à Paris, rue de Steinkerque",
+    "caption": "Théâtre de rue à Paris, rue de Steinkerque",
+    "credit": "Bob Hall from Christchurch, New Zealand",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Street_theatre_1,_Rue_de_Steinkerque_-_Boulevard_de_Rochechouart,_Paris.jpg",
+    "title": "Street theatre 1, Rue de Steinkerque - Boulevard de Rochechouart, Paris.jpg",
+    "position": "50% 35%"
+  },
+  {
+    "id": "scene-new-3",
+    "group": "cirque",
+    "src": "assets/scenes-libres/scene-new-3.webp",
+    "alt": "Ives Nicols · numéro de jonglage aux balles",
+    "caption": "Ives Nicols · numéro de jonglage aux balles",
+    "credit": "Usien",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jongleur_Spanien_Circus_Balls.JPG",
+    "title": "Jongleur Spanien Circus Balls.JPG",
+    "position": "50% 35%"
+  },
+  {
+    "id": "scene-new-4",
+    "group": "musique",
+    "src": "assets/scenes-libres/scene-new-4.webp",
+    "alt": "Fanfare du Château · Journée internationale de la Paix, Genève, 2009",
+    "caption": "Fanfare du Château · Journée internationale de la Paix, Genève, 2009",
+    "credit": "Yann (talk)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fanfare_du_Ch%C3%A2teau_Gen%C3%A8ve_2009.jpg",
+    "title": "Fanfare du Château Genève 2009.jpg",
+    "position": "50% 35%"
+  },
+  {
+    "id": "scene-new-5",
+    "group": "collectif",
+    "src": "assets/scenes-libres/scene-new-5.webp",
+    "alt": "Marionnettes géantes pendant une célébration de carnaval",
+    "caption": "Marionnettes géantes pendant une célébration de carnaval",
+    "credit": "Houssain tork",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:C%C3%A9l%C3%A9bration_du_carnaval_%C3%A0_l%27aide_de_marionnettes_g%C3%A9antes.jpg",
+    "title": "Célébration du carnaval à l'aide de marionnettes géantes.jpg",
+    "position": "50% 35%"
+  },
+  {
+    "id": "scene-new-6",
+    "group": "danse",
+    "src": "assets/scenes-libres/scene-new-6.webp",
+    "alt": "Anatomia · Compagnia Simona Bertozzi / Nexus",
+    "caption": "Anatomia · Compagnia Simona Bertozzi / Nexus",
+    "credit": "Marcello Briguglio",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Anatomia_-_Compagnia_Simona_Bertozzi._Nexus.jpg",
+    "title": "Anatomia - Compagnia Simona Bertozzi. Nexus.jpg",
+    "position": "50% 35%"
+  }
+]

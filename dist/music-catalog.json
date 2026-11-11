@@ -1,0 +1,20 @@
+{
+  "reviewedAt": "2026-11-09",
+  "styles": [
+    {"id":"chanson","label":"Chanson / variété française","query":"Chanson"},
+    {"id":"jazz","label":"Jazz / blues","query":"Jazz, blues"},
+    {"id":"rock","label":"Pop / rock","query":"Pop, rock"},
+    {"id":"rap","label":"Hip-hop / rap / slam","query":"Hip-hop, rap, slam"},
+    {"id":"electro","label":"Électro / techno","query":"Musiques électroniques, techno"},
+    {"id":"world","label":"Musiques du monde","query":"Musiques du monde"},
+    {"id":"trad","label":"Traditionnel / folk","query":"Musiques traditionnelles"},
+    {"id":"metal","label":"Métal / hard rock","query":"Métal, hard rock"},
+    {"id":"classique","label":"Classique / lyrique","query":"Musiques classiques"},
+    {"id":"rnb","label":"RnB / soul","query":"RnB"}
+  ],
+  "places": [
+    {"id":"coquelicot","name":"Le Coquelicot","city":"Fougères","communeCode":"35115","type":"cafe","url":"https://www.le-coquelicot.fr/","source":"https://www.le-coquelicot.fr/contact/","styles":["electro","world","trad"],"capacity":null,"email":"programmationjazzetjava@gmail.com","evidence":"Café-concert associatif. La programmation présente notamment des concerts électro, musiques du monde et sessions irlandaises. Les apéros-concerts accueillent des formats acoustiques.","conditions":"Propositions artistiques par e-mail ; le lieu annonce prendre contact avec les groupes retenus quatre à six mois avant la date. Jauge et accueil technique à confirmer."},
+    {"id":"pannonica","name":"Pannonica","city":"Nantes","communeCode":"44109","type":"salle","url":"https://www.pannonica.com/","source":"https://www.pannonica.com/pannonica/","styles":["jazz"],"capacity":200,"email":"programmation@pannonica.com","evidence":"Club consacré au jazz et aux musiques improvisées. Le Pannonica annonce 200 places debout ou 140 en cabaret.","conditions":"Ces jauges concernent le club Pannonica, pas la salle Paul-Fort. Forme, implantation et conditions de programmation à convenir avec l’équipe."},
+    {"id":"bouche-air","name":"La Bouche d’Air","city":"Nantes","communeCode":"44109","type":"salle","url":"https://www.labouchedair.com/programmation/","source":"https://www.labouchedair.com/infos-pratiques/contact/","styles":["chanson","jazz","rock","world","rap"],"capacity":null,"email":"direction@labouchedair.com","evidence":"Programmation de chanson, blues, pop-folk, slam et musiques du monde. Les propositions de programmation sont adressées à la direction.","conditions":"Le rapprochement jazz / blues porte ici sur le blues ; rap / slam sur le slam. Vérifier l’adéquation précise avec l’équipe. Jauge et besoins techniques à confirmer."}
+  ]
+}

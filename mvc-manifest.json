@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "moved": {
+    "operations-core.js": "js/models/operations-core.js",
+    "operations-ui.js": "js/views/operations-ui.js",
+    "operations-forms.js": "js/controllers/operations-forms.js",
+    "operations-exports.js": "js/services/operations-exports.js",
+    "operations-connect.js": "js/controllers/operations-connect.js",
+    "operations-search.js": "js/controllers/operations-search.js",
+    "finance-core.js": "js/models/finance-core.js",
+    "finance-ui.js": "js/views/finance-ui.js",
+    "finance-forms.js": "js/controllers/finance-forms.js",
+    "finance-exports.js": "js/services/finance-exports.js",
+    "finance-options.js": "js/controllers/finance-options.js",
+    "planner-core.js": "js/models/planner-core.js",
+    "planner-ui.js": "js/views/planner-ui.js",
+    "planner-actions.js": "js/controllers/planner-actions.js",
+    "booking-core.js": "js/models/booking-core.js",
+    "booking-ui.js": "js/views/booking-ui.js",
+    "booking-actions.js": "js/controllers/booking-actions.js",
+    "programming-core.js": "js/models/programming-core.js",
+    "programming-ui.js": "js/views/programming-ui.js",
+    "programming-actions.js": "js/controllers/programming-actions.js",
+    "newsletter-core.js": "js/models/newsletter-core.js",
+    "newsletter-editor.js": "js/controllers/newsletter-editor.js",
+    "project-entry.js": "js/controllers/project-entry.js",
+    "prospect-core.js": "js/models/prospect-core.js"
+  },
+  "entry": [
+    "js/models/demo-access.js",
+    "js/views/project-entry.js",
+    "js/controllers/project-entry.js"
+  ],
+  "newsletter": [
+    "js/models/newsletter-core.js",
+    "js/views/newsletter-ui.js",
+    "js/controllers/newsletter-editor.js"
+  ],
+  "bundles": {
+    "prospection.js": [
+      "js/models/prospection-state.js",
+      "js/views/prospection-ui.js",
+      "js/services/prospection-exports.js",
+      "js/controllers/prospection-actions.js"
+    ]
+  }
+}

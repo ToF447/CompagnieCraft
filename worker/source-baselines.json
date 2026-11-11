@@ -1,0 +1,42 @@
+{
+  "fdva": {
+    "url": "https://associations.gouv.fr/fonds-pour-le-developpement-de-la-vie-associative-fdva",
+    "fingerprint": "29d2e3825fd9eb7351994808c04bb6a8b7789e5f6f79c26dc68996bcc9a56b0e",
+    "checkedAt": "2026-10-31T00:33:38.633Z",
+    "characters": 19765
+  },
+  "adsv": {
+    "url": "https://www.culture.gouv.fr/catalogue-des-demarches-et-subventions/subvention/aides-aux-equipes-independantes-aides-deconcentrees-au-spectacle-vivant-adsv",
+    "fingerprint": "fdf55f0b6de21314a410688b3dc579d5c091b2d8bc88c5f2b00734417976e444",
+    "checkedAt": "2026-10-31T00:33:38.764Z",
+    "characters": 112066
+  },
+  "feiaca": {
+    "url": "https://www.culture.gouv.fr/catalogue-des-demarches-et-subventions/appels-a-projets-candidatures/p-fonds-d-encouragement-aux-initiatives-artistiques-et-culturelles-des-amateurs-feiaca",
+    "fingerprint": null,
+    "checkedAt": null
+  },
+  "sante": {
+    "url": "https://www.culture.gouv.fr/catalogue-des-demarches-et-subventions/subvention/culture-sante-handicap-et-dependance",
+    "fingerprint": "44fe6555542ba97565c92ef6228395548a18edccf1f5a5f3c0cc1079dbec2192",
+    "checkedAt": "2026-10-31T00:33:39.360Z",
+    "characters": 73259
+  },
+  "rue": {
+    "url": "https://www.culture.gouv.fr/catalogue-des-demarches-et-subventions/appels-a-projets-candidatures/aide-nationale-a-la-creation-pour-les-arts-de-la-rue",
+    "fingerprint": "b2fd1d0b2c7cb3365c92de60c9f0468f5cc253c141e4bcc6543c99037c058f26",
+    "checkedAt": "2026-10-31T00:33:39.405Z",
+    "characters": 14598
+  },
+  "bretagne": {
+    "url": "https://www.bretagne.bzh/aides/fiches/spectacle-vivant-equipes-artistiques-projet-culturel-et-artistique/",
+    "fingerprint": null,
+    "checkedAt": null
+  },
+  "loire44": {
+    "url": "https://www.loire-atlantique.fr/44/culture-et-patrimoine/aide-a-la-creation-spectacle-vivant/c_1442773",
+    "fingerprint": "9e9935d4ced528b78e5395cf48eac9af03aec1d6b2ff90b1f9030520fc833ff0",
+    "checkedAt": "2026-10-31T00:33:39.692Z",
+    "characters": 6160
+  }
+}

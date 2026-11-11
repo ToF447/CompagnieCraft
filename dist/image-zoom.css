@@ -1,0 +1,17 @@
+.image-viewer{position:fixed;inset:0;box-sizing:border-box;width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));border:0;border-radius:0;background:#171513;color:#fff;overflow:hidden}
+.image-viewer[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:12px}
+.image-viewer::backdrop{background:#171513}
+.image-viewer-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.image-viewer-toolbar button{min-height:44px;min-width:44px;padding:8px 12px;background:#302c28;color:#fff;border:1px solid #766d65;border-radius:5px;font:inherit;cursor:pointer}
+.image-viewer-toolbar [data-photo-close]{margin-left:auto}.image-viewer-toolbar output{min-width:56px;text-align:center;color:#fff}
+.image-viewer-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;overflow:hidden;touch-action:none;user-select:none}
+.image-viewer-stage img{display:block;flex:none;max-width:none;max-height:none;object-fit:contain;transform-origin:center;pointer-events:none}
+.image-viewer-caption{font-size:14px;line-height:1.4;max-height:25dvh;overflow:auto;color:#fff}.image-viewer-caption p{margin:0 0 6px}.image-viewer-caption a{color:#ffc5a7;text-decoration:underline}.image-viewer-caption small{display:block;margin-top:6px;color:#ded8d2}
+.image-viewer :focus-visible{outline:3px solid #ffc5a7;outline-offset:3px}
+@media print{.image-viewer{display:none!important}}
+/* Keep the viewer independent of the application's dialog/theme overrides. */
+html[data-theme] dialog.image-viewer{position:fixed!important;inset:0!important;width:100vw!important;max-width:none!important;height:100dvh!important;max-height:none!important;margin:0!important;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom))!important;background:#171513!important;color:#fff!important;overflow:hidden!important;border:0!important;border-radius:0!important}
+html[data-theme] dialog.image-viewer[open]{display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;gap:12px!important}
+html[data-theme] .image-viewer :is(p,output,small){color:#fff!important;font-size:14px!important}
+html[data-theme] .image-viewer a{color:#ffc5a7!important;font-size:14px!important}
+html[data-theme] .image-viewer button{color:#fff!important;background:#302c28!important;font-size:16px!important}

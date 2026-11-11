@@ -1,0 +1,5 @@
+dist/server/
+dist/assets/
+hostinger-package/
+.runtime*/
+node_modules/

@@ -1,0 +1,85 @@
+/* CompagnieCraft: stage photographs carry the expression; the workshop stays
+   quiet and usable. Only the Atelier palette changes; user hues remain inline. */
+.project-sharing-quote { margin:0 0 24px; font:700 22px/1.4 Source,Arial,sans-serif; color:var(--ui-text); }
+.welcome-sharing { max-width:70ch; padding:18px 0 18px 20px; border-left:3px solid var(--ui-accent); font-size:17px; line-height:1.6; }
+.welcome-sharing strong { display:block; margin-top:12px; }
+@media(max-width:740px){.project-sharing-quote{font-size:20px}.welcome-sharing{padding-left:16px;font-size:16px}}
+html[data-theme=atelier] {
+ --ui-bg:#faf8f6; --ui-paper:#ffffff; --ui-soft:#fff0eb;
+ --ui-text:#2a2422; --ui-muted:#685b55; --ui-border:#d9ccc7;
+ --ui-accent:#c52b18; --ui-on-accent:#ffffff; --ui-hover:#fbe5dc;
+ --ui-focus:#b52a18; --ui-heading:Source,Arial,sans-serif; --ui-radius:7px;
+ --brand-vermilion:#e62b19; --brand-action:#df2917;
+}
+html[data-theme] body { background:var(--ui-bg); color:var(--ui-text); }
+html[data-theme] :is(h1,h2,h3,h4) { text-wrap:pretty; }
+html[data-theme] #content :is(h1,.title-row h1,.home-welcome h1) {
+ font-family:var(--ui-heading); font-weight:700; letter-spacing:-.9px; line-height:1.13; transform:none; color:var(--ui-text);
+}
+html[data-theme] :is(h1,h2) em { font:inherit; color:inherit; white-space:normal; }
+html[data-theme] #content h1::after { display:none; }
+html[data-theme] #content :is(.panel-head h2,.column-heading h2,.show-detail h2,.contact-cards .card-title,.calendar-toolbar h2,.note h2) {
+ font-family:var(--ui-heading); font-size:24px; font-weight:700; line-height:1.25; letter-spacing:-.35px; color:var(--ui-text);
+}
+html[data-theme] :is(.eyebrow,.editor-section-label) { text-transform:none; letter-spacing:0; font:400 14px/1.5 Source,Arial,sans-serif; color:var(--ui-muted); }
+html[data-theme] #content .home-welcome h1 { font-size:clamp(32px,3.3vw,44px); }
+html[data-theme] .stats .stat strong { font:700 34px/1.15 Source,Arial,sans-serif; color:var(--ui-accent); }
+html[data-theme] .stats { border-block:1px solid var(--ui-border); }
+html[data-theme] :is(.primary,.secondary,.small-button) { border-radius:7px; box-shadow:none; }
+html[data-theme] .primary { background:var(--ui-accent); color:var(--ui-on-accent); border:1px solid var(--ui-accent); }
+html[data-theme] .primary:hover { filter:brightness(.94); }
+html[data-theme] .secondary { background:var(--ui-paper); color:var(--ui-text); border-color:var(--ui-border); }
+html[data-theme] .secondary:hover { background:var(--ui-hover); color:var(--ui-text); }
+html[data-theme] .app-bar { background:var(--ui-paper); border-bottom:1px solid var(--ui-border); box-shadow:none; }
+html[data-theme] .app-bar .brand { font-weight:700; letter-spacing:-.7px; }
+html[data-theme] .app-bar .mark { background:var(--ui-soft); color:var(--ui-accent); border:0; border-radius:12px 5px 12px 5px; }
+html[data-theme] .app-nav-group>summary { border-radius:6px 6px 0 0; }
+html[data-theme] .app-nav-group.active>summary { background:var(--ui-soft); }
+html[data-theme] #personal-shortcuts { border-bottom:1px solid var(--ui-border); background:var(--ui-bg); }
+html[data-theme] #personal-shortcuts .personal-shortcut { border-color:transparent; background:var(--ui-paper); }
+html[data-theme] #personal-shortcuts .personal-shortcut[aria-current] { background:var(--ui-accent); border-color:var(--ui-accent); }
+html[data-theme] #personal-shortcuts .personal-shortcut:hover { border-color:var(--ui-accent); }
+html[data-theme] #content .panel { box-shadow:none; border-radius:8px; }
+html[data-theme] .request { box-shadow:none; border-radius:8px; }
+html[data-theme] .column-heading { clip-path:none; border-radius:6px; background:var(--ui-soft); border-bottom:0; }
+html[data-theme] .module-card-button,html[data-theme] .module-tile,html[data-theme] .module-dashboard-card { border-radius:9px; box-shadow:none; }
+html[data-theme] .module-card-button:hover { background:var(--ui-paper); outline:1px solid var(--ui-accent); outline-offset:-1px; }
+html[data-theme] .module-card-button .module-illustration { padding:3px; background:var(--ui-soft); border-radius:7px; }
+html[data-theme] .module-card-top small { border-radius:4px; }
+html[data-theme] .module-card-bottom { color:var(--ui-muted); }
+html[data-theme] .module-card-button:hover .module-card-bottom { color:var(--ui-accent); }
+html[data-theme] #content .module-mother { border:0; background:var(--ui-soft); border-radius:8px; }
+html[data-theme] .module-dashboard-card-head .module-illustration { color:var(--ui-accent); }
+html[data-theme] .scene-caption p { text-transform:none; letter-spacing:0; font-size:15px; }
+html[data-theme] .scene-caption strong { letter-spacing:-1.5px; font-weight:700; }
+html[data-theme] .scene-caption span { font-weight:400; }
+html[data-theme] #content .quick:hover { transform:none; }
+html[data-theme=atelier]:not([data-harmony=on]) .project-entry-collective { background:var(--ui-soft); }
+html[data-theme=atelier]:not([data-harmony=on]) .project-purpose-steps article:nth-child(2) { border-color:var(--ui-accent); }
+html[data-theme=atelier]:not([data-harmony=on]) .project-purpose-steps article:nth-child(3) { border-color:var(--brand-vermilion); }
+@media(max-width:720px) {
+ html[data-theme] #content :is(.panel-head h2,.column-heading h2,.show-detail h2,.calendar-toolbar h2) { font-size:22px; }
+ html[data-theme] .app-bar .brand { letter-spacing:-.5px; }
+}
+
+/* Vermilion for actions; a deeper shade keeps small links readable. */
+html[data-theme=atelier]:not([data-harmony=on]) .primary {
+ background:var(--brand-action); border-color:var(--brand-action); color:#ffffff;
+}
+html[data-theme=atelier]:not([data-harmony=on]) .primary:hover {
+ background:var(--ui-accent); border-color:var(--ui-accent); filter:none;
+}
+html[data-theme=atelier] :is(input[type=checkbox],input[type=radio]) { accent-color:var(--ui-accent); }
+html[data-theme=atelier] ::selection { background:var(--ui-hover); color:var(--ui-text); }
+
+/* Public presentation uses the brand even with a saved personal workspace hue. */
+#project-entry, .welcome-intro, .welcome-offers, .welcome-collective, .welcome-principles {
+ --ui-bg:#faf8f6; --ui-paper:#ffffff; --ui-soft:#fff0eb; --ui-text:#2a2422;
+ --ui-muted:#685b55; --ui-border:#d9ccc7; --ui-accent:#c52b18; --ui-on-accent:#fff;
+ --ui-hover:#fbe5dc; --ui-focus:#b52a18; --brand-action:#df2917;
+ color:var(--ui-text);
+}
+html[data-theme] :is(#project-entry,.welcome-intro,.welcome-collective,.welcome-principles) .primary {
+ background:#df2917!important; border-color:#df2917!important; color:#fff!important;
+}
+html[data-theme] :is(#project-entry,.welcome-intro,.welcome-collective,.welcome-principles) .primary:hover {background:#c52b18!important;border-color:#c52b18!important}

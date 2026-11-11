@@ -1,0 +1,803 @@
+/* Appearance tokens are independent of business state. Atelier preserves the
+   existing design; the four alternatives override legacy fixed colours here. */
+:root {
+  --ui-bg: #faf8f6;
+  --ui-paper: #ffffff;
+  --ui-soft: #fff0eb;
+  --ui-text: #2a2422;
+  --ui-muted: #685b55;
+  --ui-border: #d9ccc7;
+  --ui-accent: #c52b18;
+  --ui-on-accent: #ffffff;
+  --ui-hover: #fbe5dc;
+  --ui-focus: #b52a18;
+  --ui-danger: #993c42;
+  --ui-danger-bg: #fbecef;
+  --ui-warning: #73521d;
+  --ui-warning-bg: #f7edda;
+  --ui-success: #305a36;
+  --ui-success-bg: #e9f1e2;
+  --ui-radius: 5px;
+  --ui-heading: Georgia, serif;
+}
+html[data-theme="studio"] {
+  --ui-bg: #f4f6fa;
+  --ui-paper: #fff;
+  --ui-soft: #edf1f7;
+  --ui-text: #243247;
+  --ui-muted: #526379;
+  --ui-border: #c8d2e0;
+  --ui-accent: #185abc;
+  --ui-on-accent: #fff;
+  --ui-hover: #e2ebfa;
+  --ui-focus: #9e3367;
+  --ui-radius: 10px;
+  --ui-heading: Source, Arial, sans-serif;
+}
+html[data-theme="coulisses"] {
+  color-scheme: dark;
+  --ui-bg: #171c23;
+  --ui-paper: #222a34;
+  --ui-soft: #1e2530;
+  --ui-text: #eceae3;
+  --ui-muted: #bac3cd;
+  --ui-border: #56616d;
+  --ui-accent: #dbc084;
+  --ui-on-accent: #211d15;
+  --ui-hover: #303b49;
+  --ui-focus: #f2ce92;
+  --ui-danger: #ffb6bb;
+  --ui-danger-bg: #492c34;
+  --ui-warning: #f2d08a;
+  --ui-warning-bg: #403724;
+  --ui-success: #c2e2ba;
+  --ui-success-bg: #293c31;
+  --ui-radius: 6px;
+  --ui-heading: Georgia, serif;
+}
+html[data-theme="papier"] {
+  --ui-bg: #f3ecdf;
+  --ui-paper: #fffaf0;
+  --ui-soft: #e9deca;
+  --ui-text: #49372c;
+  --ui-muted: #715c49;
+  --ui-border: #cbb69d;
+  --ui-accent: #833b2f;
+  --ui-on-accent: #fffaf0;
+  --ui-hover: #eddfcd;
+  --ui-focus: #304d83;
+  --ui-radius: 2px;
+  --ui-heading: Georgia, serif;
+}
+html[data-theme="contraste"] {
+  --ui-bg: #fff;
+  --ui-paper: #fff;
+  --ui-soft: #f2f2f2;
+  --ui-text: #101010;
+  --ui-muted: #333;
+  --ui-border: #303030;
+  --ui-accent: #101010;
+  --ui-on-accent: #fff;
+  --ui-hover: #e1e1e1;
+  --ui-focus: #003ac2;
+  --ui-danger: #8e001c;
+  --ui-danger-bg: #fff;
+  --ui-warning: #684100;
+  --ui-warning-bg: #fff;
+  --ui-success: #00491f;
+  --ui-success-bg: #fff;
+  --ui-radius: 2px;
+  --ui-heading: Source, Arial, sans-serif;
+}
+.appearance-launch {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ui-border);
+  border-radius: 50%;
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.appearance-launch:hover {
+  background: var(--ui-hover);
+}
+#appearance-menu {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  box-shadow: 0 12px 45px #0003;
+  font:
+    15px/1.4 Source,
+    Arial,
+    sans-serif;
+}
+#appearance-menu::backdrop {
+  background: transparent;
+}
+.appearance-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+#appearance-menu .appearance-head h2 {
+  font: 500 24px/1.2 var(--ui-heading);
+  color: var(--ui-text);
+  margin: 5px 0 0;
+  letter-spacing: -0.5px;
+}
+.appearance-head small,
+.appearance-intro {
+  color: var(--ui-muted);
+}
+.appearance-head button {
+  background: transparent;
+  color: var(--ui-text);
+  border: 0;
+  padding: 2px 8px;
+  font-size: 26px;
+}
+.appearance-intro {
+  font-size: 13px;
+  margin: 14px 0;
+}
+.appearance-options {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+.appearance-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 10px 9px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.appearance-option:hover {
+  background: var(--ui-hover);
+}
+.appearance-option:has(input:checked) {
+  border-color: var(--ui-accent);
+  background: var(--ui-soft);
+}
+.appearance-option input {
+  accent-color: var(--ui-accent);
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin: 0;
+}
+.appearance-option strong {
+  display: block;
+  font-weight: 700;
+}
+.appearance-option small {
+  display: block;
+  font-size: 12px;
+  color: var(--ui-muted);
+  margin-top: 2px;
+}
+.appearance-swatch {
+  display: flex;
+  gap: 2px;
+  width: 39px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #8886;
+  flex: none;
+}
+.appearance-swatch i {
+  flex: 1;
+  background: var(--swatch-a);
+}
+.appearance-swatch i:nth-child(2) {
+  background: var(--swatch-b);
+}
+.appearance-swatch i:nth-child(3) {
+  background: var(--swatch-c);
+}
+.appearance-swatch-atelier {
+  --swatch-a: #faf8f6;
+  --swatch-b: #fff0eb;
+  --swatch-c: #df2917;
+}
+.appearance-swatch-studio {
+  --swatch-a: #fff;
+  --swatch-b: #e2ebfa;
+  --swatch-c: #185abc;
+}
+.appearance-swatch-coulisses {
+  --swatch-a: #171c23;
+  --swatch-b: #303b49;
+  --swatch-c: #dbc084;
+}
+.appearance-swatch-papier {
+  --swatch-a: #fffaf0;
+  --swatch-b: #d9c6aa;
+  --swatch-c: #833b2f;
+}
+.appearance-swatch-contraste {
+  --swatch-a: #fff;
+  --swatch-b: #111;
+  --swatch-c: #003ac2;
+}
+#appearance-status {
+  font-size: 12px;
+  color: var(--ui-muted);
+  line-height: 1.5;
+  margin: 15px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--ui-border);
+}
+.appearance-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* Explicit surface overrides keep every module readable, including dialogs and planning. */
+html[data-theme] {
+  --ink: var(--ui-text);
+  --green: var(--ui-accent);
+  --accent: var(--ui-accent);
+  --line: var(--ui-border);
+  --paper: var(--ui-paper);
+  --muted: var(--ui-muted);
+}
+html[data-theme] :is(body, .main, header) {
+  background: var(--ui-bg);
+  color: var(--ui-text);
+}
+html[data-theme]
+  :is(
+    aside,
+    .demo,
+    .filterbar,
+    .prospect-criteria,
+    .fin-note,
+    .fin-guidance,
+    .readiness,
+    .ops-empty,
+    .stats,
+    .team-grid article,
+    .date-block,
+    .column,
+    .ops-toolbar,
+    .watch-filters,
+    .live-source,
+    .avatar
+  ) {
+  background: var(--ui-soft);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(
+    .panel,
+    .request,
+    .stat,
+    .quick,
+    .show-card,
+    .show-detail,
+    .contact-card,
+    .calendar-cell,
+    .plan-day,
+    .plan-card,
+    .ops-slot,
+    .ops-resource-row,
+    .ops-project-row,
+    .ops-budget-row,
+    .ops-task-row,
+    .ops-document-row,
+    .editor-footer,
+    .mail-preview,
+    dialog,
+    #workspace-editor,
+    #fin-editor,
+    #source-editor,
+    #collective-editor,
+    #access-join,
+    #guide-dialog,
+    #plan-editor,
+    #ops-editor,
+    #ops-command,
+    #field-guide-popover,
+    #admin-suggestions,
+    footer
+  ) {
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+  border-radius: var(--ui-radius);
+}
+html[data-theme]
+  :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    .title-row h1,
+    .home-welcome h1,
+    .panel-head h2,
+    .card-title,
+    .column-heading h2,
+    .show-detail h2,
+    .editor-header + h2
+  ) {
+  color: var(--ui-text);
+  font-family: var(--ui-heading);
+  text-transform: none;
+  transform: none;
+}
+html[data-theme]
+  :is(
+    .brand,
+    nav a,
+    .troupe-label,
+    .aside-bottom,
+    .ops-nav-label,
+    .eyebrow,
+    .welcome-company,
+    .card-title,
+    .task-open strong,
+    .upcoming-row strong,
+    .agenda-date,
+    .stat strong,
+    .calendar-toolbar h2,
+    .check-list,
+    .editor-fields label,
+    .fin-step
+  ) {
+  color: var(--ui-text);
+}
+html[data-theme]
+  :is(
+    p,
+    small,
+    .muted,
+    .lead,
+    .welcome-text,
+    .task p,
+    .task-open small,
+    .task-deadline,
+    .upcoming-row small,
+    .brand small,
+    .stat span,
+    .request .contact-line,
+    .next-action small,
+    .result-line,
+    .show-caption,
+    .source-provenance-link,
+    .document-actions a,
+    .editor-footer > span,
+    .fin-step small,
+    .table-wrap th,
+    .table-wrap td small,
+    .plan-card small,
+    .plan-day-head small,
+    .ops-slot small,
+    .ops-command-help
+  ) {
+  color: var(--ui-muted);
+}
+html[data-theme]
+  :is(
+    h1 em,
+    .panel-head .eyebrow,
+    .text-action,
+    .panel-head a,
+    .request-date,
+    .mark,
+    nav a span
+  ) {
+  color: var(--ui-accent);
+}
+html[data-theme]
+  :is(
+    input:not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea,
+    #troupe,
+    .request select,
+    .editor-fields input,
+    .editor-fields select,
+    .editor-fields textarea
+  ) {
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+  border-radius: var(--ui-radius);
+}
+html[data-theme]
+  :is(input, select, textarea)::placeholder {
+  color: var(--ui-muted);
+  opacity: 1;
+}
+html[data-theme]
+  :is(.primary, .small-button, #toast) {
+  background: var(--ui-accent);
+  border-color: var(--ui-accent);
+  color: var(--ui-on-accent);
+}
+html[data-theme] .primary:hover {
+  filter: brightness(0.92);
+}
+html[data-theme]
+  :is(
+    .secondary,
+    .ops-global-search,
+    .filter-toggle,
+    .view-switch button,
+    .prospect-tabs button,
+    .plan-toolbar button
+  ) {
+  background: var(--ui-paper);
+  border-color: var(--ui-border);
+  color: var(--ui-text);
+}
+html[data-theme]
+  :is(
+    nav a:hover,
+    .secondary:hover,
+    .ops-global-search:hover,
+    .admin-suggestions button:hover,
+    .admin-suggestions [aria-selected="true"],
+    .ops-project-row:hover,
+    .ops-slot:hover,
+    .plan-card:hover
+  ) {
+  background: var(--ui-hover);
+  color: var(--ui-text);
+}
+html[data-theme]
+  :is(
+    nav a[aria-current="page"],
+    .prospect-tabs button[aria-pressed="true"],
+    .plan-toolbar button[aria-pressed="true"],
+    .view-switch button[aria-pressed="true"]
+  ) {
+  background: var(--ui-accent);
+  color: var(--ui-on-accent);
+}
+html[data-theme] nav a[aria-current="page"]:before {
+  background: var(--ui-accent);
+}
+html[data-theme] nav a[aria-current="page"] span {
+  color: var(--ui-on-accent);
+}
+html[data-theme]
+  :is(
+    .mark,
+    .tag,
+    .show-badges span,
+    .status,
+    .status-confirmed,
+    .plan-kind,
+    .plan-count,
+    .prospect-status
+  ) {
+  background: var(--ui-soft);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(
+    .editor-error,
+    .sync-error,
+    .ops-conflict,
+    .plan-warning,
+    .status-cancelled
+  ) {
+  background: var(--ui-danger-bg);
+  color: var(--ui-danger);
+  border-color: var(--ui-danger);
+}
+html[data-theme]
+  :is(.status-option, .note, .plan-option) {
+  background: var(--ui-warning-bg);
+  color: var(--ui-warning);
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(
+    .task,
+    .upcoming-row,
+    .agenda-row,
+    .panel-head,
+    .card-bottom,
+    .facts > div,
+    .calendar-weekdays,
+    .calendar-cell,
+    .collective-review,
+    .collective-fact,
+    .fin-step,
+    th,
+    td,
+    header,
+    footer,
+    .guide-progress
+  ) {
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(button, a, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--ui-focus);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+html[data-theme]
+  :is(input[type="radio"], input[type="checkbox"]) {
+  accent-color: var(--ui-accent);
+}
+html[data-theme="studio"] :is(h1, .home-welcome h1) {
+  font-weight: 600;
+  letter-spacing: -1.3px;
+}
+html[data-theme="studio"] :is(.title-row h1:after, .home-welcome h1:after) {
+  transform: none;
+  background: var(--ui-accent);
+}
+html[data-theme="papier"] :is(.lead, .welcome-text, .collective-review dd) {
+  font-family: Georgia, serif;
+  line-height: 1.7;
+}
+html[data-theme="papier"] .panel {
+  box-shadow: 2px 3px 0 #d8c6aa55;
+}
+html[data-theme="contraste"] body {
+  font-size: 18px;
+}
+html[data-theme="contraste"]
+  :is(.panel, .request, input, select, textarea, .secondary) {
+  border-width: 2px;
+}
+html[data-theme="contraste"] :is(main a, .text-action) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+html[data-theme="contraste"]
+  :is(
+    .card-title,
+    .task-open strong,
+    .upcoming-row strong,
+    nav a[aria-current="page"]
+  ) {
+  font-weight: 700;
+}
+/* Scheduling and operational modules keep their activity colours and readable labels. */
+html[data-theme]
+  :is(
+    .plan-filters,
+    .plan-weekday,
+    .plan-day.plan-outside,
+    .prospect-scope,
+    .ensemble-note,
+    .ensemble-matches,
+    .match-summary,
+    .prospect-date,
+    .team-reminder,
+    .ops-chip,
+    .ops-accept-conflicts
+  ) {
+  background: var(--ui-soft);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(.plan-grid-scroll, #prospect-editor, #server-gate, .guide-launch) {
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(
+    .plan-card-title,
+    .plan-day-head time,
+    .ops-project-open,
+    .ops-related,
+    .ops-slot-row,
+    .admin-suggestions button,
+    #ops-command-results button,
+    #server-gate h1
+  ) {
+  color: var(--ui-text);
+}
+html[data-theme]
+  :is(
+    .plan-card-top,
+    .plan-filters label,
+    .plan-legend,
+    .plan-result-line,
+    .plan-list-date,
+    .ops-project-open small,
+    .ops-project-balance small,
+    .ops-table small,
+    .ops-metrics small,
+    .ops-task small,
+    .ops-crew-summary span,
+    .ops-editor-fields legend,
+    .ops-check-grid small,
+    .ops-resource-picks small,
+    .prospect-criteria label,
+    .prospect-source small,
+    .ensemble-matches span,
+    .ensemble-choice small,
+    .ensemble-show-row small,
+    .team-summary p,
+    .team-task small,
+    .team-notes small,
+    .guide-progress,
+    .ops-global-search kbd
+  ) {
+  color: var(--ui-muted);
+}
+html[data-theme]
+  :is(
+    .plan-card-actions button,
+    .plan-project-link,
+    .plan-add,
+    .prospect-source
+  ) {
+  color: var(--ui-accent);
+}
+html[data-theme]
+  :is(.plan-view-switch button, .admin-place-search button) {
+  background: var(--ui-paper);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+html[data-theme]
+  :is(
+    .plan-view-switch button[aria-pressed="true"],
+    .plan-today .plan-day-head time
+  ) {
+  background: var(--ui-accent);
+  color: var(--ui-on-accent);
+}
+html[data-theme]
+  :is(
+    .plan-day.plan-today,
+    .plan-day.plan-drop-target,
+    #ops-command-results button:hover,
+    .ops-slot-row:hover
+  ) {
+  background: var(--ui-hover);
+}
+html[data-theme] .plan-card {
+  border-left-color: #558567;
+}
+html[data-theme] .plan-request {
+  border-left-color: #c58467;
+}
+html[data-theme] .plan-event {
+  border-left-color: #79aabd;
+}
+html[data-theme] .plan-followup {
+  border-left-color: #c6a44e;
+}
+html[data-theme] .plan-task {
+  border-left-color: #b095c3;
+}
+html[data-theme] .plan-absence {
+  border-left-color: #b0b2ac;
+}
+html[data-theme] .negative {
+  color: var(--ui-danger) !important;
+}
+html[data-theme] .request .contact-line {
+  color: var(--ui-muted) !important;
+}
+html[data-theme="contraste"]
+  :is(nav a, main p, main input, main select, main textarea) {
+  font-size: 17px;
+}
+html[data-theme] .plan-today .plan-day-head time {
+  color: var(--ui-on-accent) !important;
+}
+html[data-theme] .plan-card {
+  border-left-color: #558567 !important;
+}
+html[data-theme] .plan-request {
+  border-left-color: #c58467 !important;
+}
+html[data-theme] .plan-event {
+  border-left-color: #79aabd !important;
+}
+html[data-theme] .plan-followup {
+  border-left-color: #c6a44e !important;
+}
+html[data-theme] .plan-task {
+  border-left-color: #b095c3 !important;
+}
+html[data-theme] .plan-absence {
+  border-left-color: #b0b2ac !important;
+}
+html[data-theme]
+  :is(#collective-editor-error, #server-login-error) {
+  color: var(--ui-danger);
+}
+@media (max-width: 720px) {
+  header .appearance-launch {
+    margin-left: auto;
+  }
+  .appearance-option {
+    padding: 10px 7px;
+  }
+  .appearance-launch {
+    width: 44px;
+    height: 44px;
+  }
+  #appearance-menu {
+    padding: 17px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .appearance-launch,
+  #appearance-menu {
+    display: none !important;
+  }
+  html[data-theme] {
+    --ui-bg: #fff;
+    --ui-paper: #fff;
+    --ui-soft: #fff;
+    --ui-text: #111;
+    --ui-muted: #333;
+    --ui-border: #777;
+    --ui-accent: #111;
+    --ui-on-accent: #fff;
+    color-scheme: light;
+  }
+}
+
+/* Light glass help, with a solid fallback for contrast/transparency preferences. */
+html #field-guide-popover,
+html[data-theme] #field-guide-popover {
+  background: var(--ui-paper);
+  background: color-mix(in srgb, var(--ui-paper) 86%, transparent);
+  color: var(--ui-text);
+  border: 1px solid color-mix(in srgb, var(--ui-border) 65%, transparent);
+  border-radius: 8px;
+  box-shadow: 0 5px 18px #00000012;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px 15px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+html #field-guide-popover small { color: var(--ui-muted); }
+html[data-theme="contraste"] #field-guide-popover { background:var(--ui-paper);backdrop-filter:none; }
+@media(prefers-reduced-transparency:reduce) {
+  html #field-guide-popover,
+  html[data-theme] #field-guide-popover { background:var(--ui-paper);backdrop-filter:none; }
+}
+@media(forced-colors:active) {
+  html #field-guide-popover,
+  html[data-theme] #field-guide-popover { background:Canvas;color:CanvasText;border-color:CanvasText;backdrop-filter:none; }
+}

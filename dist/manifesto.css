@@ -1,0 +1,20 @@
+.manifesto-sheet { width: min(100%, 760px); margin: 0 auto; padding: clamp(24px, 5vw, 56px); background: #fffefd; color: #263d34; }
+.manifesto-page { background: #e8eee7; }
+.manifesto-page main { min-height: 100vh; }
+.manifesto-text { max-width: 65ch; }
+.manifesto-sheet h1, .manifesto-text h1 { font-family: Source, Arial, sans-serif; font-size: clamp(32px, 5vw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; margin: 32px 0 18px; }
+.manifesto-sheet h2, .manifesto-text h2 { font-size: 23px; line-height: 1.25; margin: 30px 0 12px; }
+.manifesto-sheet p, .manifesto-text p { line-height: 1.65; }
+.manifesto-subtitle { color: #626e65; }
+.manifesto-signature { margin-top: 30px; padding-top: 4px; border-top: 2px solid #294f3c; }
+.manifesto-check { display: flex !important; align-items: flex-start; gap: 12px !important; line-height: 1.5; }
+.manifesto-check input { flex: 0 0 20px; width: 20px !important; height: 20px; margin-top: 2px; accent-color: #294f3c; }
+.manifesto-reading { margin-top: 24px; }
+.manifesto-reading summary { cursor: pointer; padding: 12px 0; font-weight: 700; }
+.manifesto-reading .manifesto-text h1 { font-size: 30px; }
+.manifesto-sheet form button, .manifesto-sheet > section button { margin: 8px 8px 8px 0; }
+.manifesto-print-signature { display: none; }
+.manifesto-sheet [role=alert] { color: #9d2940; }
+.manifesto-reading summary:focus-visible { outline: 3px solid #ba344b; outline-offset: 3px; }
+@media (max-width: 600px) { .manifesto-sheet { padding: 24px 18px; } }
+@media print { .manifesto-page { background: white; } .manifesto-sheet { width: auto; padding: 0; } .manifesto-sheet a, .manifesto-sheet button { display: none; } .manifesto-print-signature { display: block; } .manifesto-signature { break-inside: avoid; } }

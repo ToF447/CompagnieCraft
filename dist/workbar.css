@@ -1,0 +1,28 @@
+/* The troupe's working navigation: same theme, stronger hierarchy, no new palette. */
+html{scroll-padding-top:calc(var(--workbar-top,82px) + var(--workbar-height,96px) + 16px)}
+#personal-shortcuts{position:sticky;top:var(--workbar-top,82px);z-index:440;display:grid;grid-template-columns:minmax(125px,165px) minmax(0,1fr) auto;align-items:center;gap:20px;padding:16px clamp(18px,3vw,48px);border-block:1px solid var(--ui-border,#c8d2e0);border-bottom:3px solid var(--ui-accent,#185abc);background:var(--ui-soft,#edf1f7);color:var(--ui-text,#243247);font-size:15px;}
+#personal-shortcuts[hidden]{display:none}
+.personal-workbar-title{display:grid;gap:4px;min-width:0}
+.personal-workbar-title strong{font-size:1.1em;font-weight:700}
+.personal-workbar-title>span{font-size:.8em;line-height:1.3;color:var(--ui-muted,#526379);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.personal-workbar-links{display:flex;gap:10px;min-width:0;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--ui-border) transparent;padding:6px;}
+#personal-shortcuts .personal-shortcut{flex:1 0 170px;display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 14px;border:1px solid var(--ui-border,#c8d2e0);border-radius:var(--ui-radius,7px);background:var(--ui-paper,#fff);color:var(--ui-text,#243247);text-decoration:none;scroll-snap-align:start;}
+#personal-shortcuts .personal-shortcut:hover{border-color:var(--ui-accent);background:var(--ui-hover,#e2ebfa)}
+#personal-shortcuts .personal-shortcut[aria-current]{border-color:var(--ui-accent);background:var(--ui-accent,#185abc);color:var(--ui-on-accent,#fff)}
+.personal-shortcut-icon{display:grid;place-items:center;flex:0 0 26px;color:var(--ui-accent)}
+.personal-shortcut-icon svg{width:25px;height:25px;}
+#personal-shortcuts .personal-shortcut[aria-current] .personal-shortcut-icon{color:inherit}
+.personal-shortcut-copy{display:grid;gap:4px;min-width:0}
+.personal-shortcut-copy strong{font-size:1em;line-height:1.3;font-weight:650}
+.personal-shortcut-copy small{font-size:.76em;line-height:1.3;color:var(--ui-muted)}
+#personal-shortcuts .personal-shortcut[aria-current] small{color:inherit;opacity:.92}
+.personal-shortcut-arrow{font-size:25px;margin-left:auto;padding-left:4px;line-height:1;}
+#personal-shortcuts .personal-adjust{display:flex;align-items:center;gap:8px;min-height:44px;margin-left:0;padding:8px;color:var(--ui-text);font-size:.85em;text-decoration:none;white-space:nowrap;}
+.personal-adjust svg{width:21px;height:21px}
+#personal-shortcuts .personal-adjust:hover{text-decoration:underline}
+#personal-shortcuts a:focus-visible{outline:3px solid var(--ui-focus,#9e3367);outline-offset:2px}
+html[data-ui-density=compact] #personal-shortcuts{padding-block:10px}
+html[data-ui-density=compact] #personal-shortcuts .personal-shortcut{min-height:54px;padding-block:8px}
+html[data-ui-text=large] #personal-shortcuts{font-size:17px}
+@media(max-width:1000px){#personal-shortcuts{grid-template-columns:120px minmax(0,1fr) auto;gap:12px}.personal-shortcut-copy small{font-size:.75em}#personal-shortcuts .personal-shortcut{flex-basis:160px;padding-inline:10px;gap:9px}}
+@media(max-width:720px){#personal-shortcuts{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px 16px;font-size:14px}.personal-workbar-title{display:flex;align-items:baseline;gap:10px}.personal-workbar-title>span{max-width:48vw}.personal-workbar-links{grid-column:1/-1;grid-row:2;gap:8px;padding:6px 6px 8px}#personal-shortcuts .personal-adjust{grid-column:2;grid-row:1;min-height:36px;padding:4px;font-size:12px}#personal-shortcuts .personal-shortcut{flex-basis:180px;min-height:58px}.personal-shortcut-icon svg{width:22px;height:22px}.personal-shortcut-arrow{font-size:22px}}
