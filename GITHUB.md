@@ -1,5 +1,7 @@
 # Distribution GitHub de CompagnieCraft
 
+Dépôt public : https://github.com/ToF447/compagniecraft — première publication le 11 novembre 2026.
+
 Le code original est sous AGPL-3.0-only. Les ressources tierces conservent leurs licences et crédits : voir LICENSE et NOTICE.md. Le modèle commun est décrit dans MODELE-ECONOMIQUE.md : aucun tarif publié, aucun paiement activé, aucune vente par module.
 
 ## Première publication
@@ -10,7 +12,7 @@ La commande `node scripts/prepare-github-export.cjs` prépare cet instantané da
 
 ## Installation et contrôles
 
-Suivre le démarrage local du README. Les contrôles se lancent avec `npm run check` ; ajouter `-- --php` pour les API PHP et définir `ATELIER_PHP` si nécessaire. La CI utilise Node.js 22 et PHP/PDO SQLite. Un contrôle local ne signifie pas que GitHub Actions a déjà été exécuté.
+Suivre le démarrage local du README. Les contrôles se lancent avec `npm run check` ; ajouter `-- --php` pour les API PHP et définir `ATELIER_PHP` si nécessaire. Le modèle de CI fourni dans `docs/ci/github-actions.yml` utilise Node.js 22 et PHP/PDO SQLite. Il reste à activer avec une session autorisée à modifier les workflows ; voir `docs/ci/README.md`. Un contrôle local ne signifie pas que GitHub Actions a déjà été exécuté.
 
 Le frontend statique peut être servi séparément, mais GitHub Pages ne fait tourner ni PHP ni le Worker. Le paquet Hostinger exige une installation distincte avec configuration privée et validation MySQL. Le mode hors ligne complet, l’équivalence de tous les services entre Sites et PHP et les dispositifs solidaires décrits ne doivent pas être présentés comme terminés.
 

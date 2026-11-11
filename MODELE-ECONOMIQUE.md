@@ -4,7 +4,7 @@ Décision du 11 novembre 2026. Cette décision remplace la présentation d’un 
 
 ## Principes retenus
 
-- Logiciel libre : objectif de code complet accessible, installation et adaptation possibles, avec documentation. Le dépôt public et la licence générale restent à publier ; les textes du site ne prétendent pas que cette étape est déjà faite.
+- Logiciel libre : objectif de code complet accessible, installation et adaptation possibles, avec documentation. Le dépôt public est disponible à https://github.com/ToF447/compagniecraft sous AGPL-3.0-only, avec documentation et crédits des ressources tierces.
 - Service hébergé : participation annuelle pour éviter aux utilisateurs la gestion de l’installation et de l’entretien. Les fonctionnalités ne sont pas vendues par module. Les outils optionnels restent des choix d’usage.
 - Accès solidaire : possibilité d’accès gratuit ou réduit pour les troupes sans moyens, selon des modalités à définir.
 - Contributions : informations vérifiées, tests, documentation ou code pourront donner droit à un an de service hébergé, attribué par Christophe. La contribution reste volontaire, sans obligation de travail gratuit et sans droit automatique à une invitation.

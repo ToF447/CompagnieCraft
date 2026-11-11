@@ -33,8 +33,11 @@ for (const file of files) {
     /\.(?:sqlite|db|zip|pem|key)$/i.test(file)
   )
     throw Error('Fichier privé potentiel : ' + file);
+  // The public upload does not require granting OAuth workflow privileges.
+  // Keep the CI definition available as a template instead of enabling it.
+  const publicFile = file === '.github/workflows/checks.yml' ? 'docs/ci/github-actions.yml' : file;
   const from = path.resolve(root, file),
-    to = path.resolve(destination, file);
+    to = path.resolve(destination, publicFile);
   if (!from.startsWith(root + path.sep) || !to.startsWith(destination + path.sep))
     throw Error('Chemin hors export.');
   const bytes = fs.readFileSync(from);

@@ -1,6 +1,6 @@
 # CompagnieCraft
 
-Des outils pour trouver où jouer, préparer les candidatures et travailler en troupe. Le service hébergé est préparé autour d’une participation annuelle, d’un accès solidaire et de contributions reconnues par Christophe. Aucun tarif n’est publié et aucun paiement n’est activé ; les outils ne sont pas vendus par module. La publication du code open source gratuit à installer soi-même est en préparation. Le trésor, c’est l’échange humain.
+Des outils pour trouver où jouer, préparer les candidatures et travailler en troupe. Le service hébergé est préparé autour d’une participation annuelle, d’un accès solidaire et de contributions reconnues par Christophe. Aucun tarif n’est publié et aucun paiement n’est activé ; les outils ne sont pas vendus par module. Le [code open source](https://github.com/ToF447/compagniecraft) est disponible gratuitement sous AGPL-3.0. Le trésor, c’est l’échange humain.
 
 ## Développer et reprendre le projet
 
@@ -32,7 +32,7 @@ Pour le paquet PHP : `node prepare-hostinger.cjs`, puis suivre [backend/DEPLOY.m
 - [Modules et prérequis](MODULES.md)
 - [Recherche : preuves, dates et limites](docs/venue-search.md)
 - [Installation PHP Hostinger](backend/DEPLOY.md)
-- [Préparation GitHub et licence à choisir](GITHUB.md)
+- [Distribution GitHub et licence AGPL-3.0](GITHUB.md)
 
 Les sources du navigateur sont dans dist/. Les services hébergés sont dans worker/ et backend/. Les paquets générés ne sont pas les fichiers à modifier. L’application ne dépend d’aucune conversation avec une IA ; npm est réservé aux outils de développement.
 
