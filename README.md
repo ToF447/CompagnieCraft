@@ -14,6 +14,8 @@ Le code est gratuit à consulter, installer et adapter sous licence **AGPL-3.0-o
 - Un planning, un agenda et des outils de préparation des productions.
 - Une bibliothèque de références, des exercices d’atelier et un générateur d’improvisations.
 
+**Chaque module demande un temps de configuration initiale.** Renseignez les informations utiles à son usage : spectacles, disciplines, publics, localisation, rayon de déplacement et conditions d’accueil. Plus ces renseignements sont précis et à jour, plus les informations et les pistes proposées peuvent être pertinentes et adaptées à votre troupe. Ces réglages se complètent et se modifient au fil de l’utilisation.
+
 **Cette version est une version de développement.** La démonstration locale utilise des données fictives. Les pistes de recherche ne garantissent ni une candidature ouverte, ni une date disponible. Les fonctions de partage et les comptes réels nécessitent un serveur configuré ; ils ne sont pas activés par le simple lancement de la démo.
 
 ## Essayer la démo en ligne

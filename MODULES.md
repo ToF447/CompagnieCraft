@@ -1,5 +1,7 @@
 # Le socle et ses modules
 
+Chaque module demande un temps de configuration initiale pour adapter les informations à la troupe. Les renseignements utiles varient selon l’outil : répertoire, publics, disciplines, localisation, déplacement, équipe ou conditions d’accueil. Des informations précises et actualisées aident à obtenir des pistes plus pertinentes ; ces réglages restent modifiables.
+
 **Mes modules** présente les outils en grandes tuiles illustrées. Chaque tuile décrit un besoin, les renseignements nécessaires et les dépendances, puis permet l’activation ou l’ouverture. Les mêmes présentations sont disponibles sur la page d’entrée, avant l’accès à la démonstration. Une entrée sans destination précise mène désormais au catalogue après identification.
 
 ## Socle commun
