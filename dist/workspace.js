@@ -519,6 +519,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.createElement('dialog');
   modal.id = 'workspace-editor';
   document.body.append(modal);
+  // A backdrop click follows the same close path as Escape and the close button.
+  // Starting inside the sheet and releasing outside must not dismiss an edit.
+  let backdropPress = false;
+  const outsideSheet = (event) => {
+    const r = modal.getBoundingClientRect();
+    return (
+      event.clientX < r.left ||
+      event.clientX > r.right ||
+      event.clientY < r.top ||
+      event.clientY > r.bottom
+    );
+  };
+  modal.addEventListener('pointerdown', (event) => {
+    backdropPress = event.button === 0 && event.target === modal && outsideSheet(event);
+  });
+  modal.addEventListener('click', (event) => {
+    const dismiss = backdropPress && event.target === modal && outsideSheet(event);
+    backdropPress = false;
+    if (dismiss) closeEditor();
+  });
   modal.addEventListener('cancel', (event) => {
     event.preventDefault();
     closeEditor();

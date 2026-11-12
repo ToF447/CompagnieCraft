@@ -16,6 +16,12 @@ const original = JSON.stringify(context.window.DEMO_TROUPES.paves);
 vm.runInContext(fs.readFileSync('dist/js/models/demo-showcase-data.js', 'utf8'), context);
 const company = context.window.DEMO_TROUPES.vitrine,
   data = context.seedShowcase(company);
+assert.equal(context.window.DEMO_PROFILES.length, 3);
+assert.equal(new Set(context.window.DEMO_PROFILES.map((p) => p.id)).size, 3);
+for (const profile of context.window.DEMO_PROFILES) {
+  assert.ok(context.window.DEMO_TROUPES[profile.id]);
+  assert.ok(profile.name && profile.format);
+}
 assert.equal(JSON.stringify(context.window.DEMO_TROUPES.paves), original);
 assert.deepEqual(
   JSON.parse(JSON.stringify(context.seedShowcase(context.window.DEMO_TROUPES.paves))),

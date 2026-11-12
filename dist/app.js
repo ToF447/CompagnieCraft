@@ -22,14 +22,20 @@ const stages = {
 const content = document.querySelector('#content'),
   selector = document.querySelector('#troupe'),
   dialog = document.querySelector('dialog');
-let tenant = 'paves',
+let tenant = window.DEMO_PROFILES?.[0]?.id || 'paves',
   state,
   query = '',
   storageOK = true;
-for (const [id, troupe] of Object.entries(window.DEMO_TROUPES || {})) {
+if (window.DEMO_PROFILES) selector.innerHTML = '';
+for (const [id, troupe] of window.DEMO_PROFILES
+  ? window.DEMO_PROFILES.map((profile) => [profile.id, window.DEMO_TROUPES?.[profile.id]])
+  : Object.entries(window.DEMO_TROUPES || {})) {
+  if (!troupe) continue;
+  if (window.DEMO_PROFILES && !window.DEMO_PROFILES.some((profile) => profile.id === id)) continue;
   const option = document.createElement('option');
   option.value = id;
-  option.textContent = troupe.name + ' · démo';
+  option.textContent =
+    window.DEMO_PROFILES?.find((profile) => profile.id === id)?.name || troupe.name + ' · démo';
   selector.append(option);
 }
 // Remember only a valid demo workspace; real server identity remains server-controlled.
@@ -377,8 +383,11 @@ function render() {
         .join('') +
       '</div>';
   }
-  Array.from(selector.options).find((option) => option.value === tenant).textContent =
-    (state.profile?.name || (tenant === 'dsap' ? 'Du Sol Au Plafond' : 'Ma troupe')) + ' · démo';
+  const activeOption = Array.from(selector.options).find((option) => option.value === tenant);
+  if (activeOption)
+    activeOption.textContent =
+      window.DEMO_PROFILES?.find((profile) => profile.id === tenant)?.name ||
+      (state.profile?.name || (tenant === 'dsap' ? 'Du Sol Au Plafond' : 'Ma troupe')) + ' · démo';
   document.title = pages.find((p) => p[0] === route)[2] + ' · CompagnieCraft';
 }
 content.addEventListener('submit', (event) => {
@@ -461,6 +470,7 @@ selector.onchange = () => {
   }
   query = '';
   load();
+  if (location.hash === '#parcours-demo' && tenant !== 'vitrine') location.hash = 'accueil';
   render();
   notice('Espace de démonstration changé.');
 };
