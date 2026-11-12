@@ -22,7 +22,8 @@ function showcaseStart() {
 }
 function showcasePaint() {
   let bar = document.getElementById('showcase-bar');
-  if (!showcaseActive()) {
+  const profile = window.DEMO_PROFILES?.find((item) => item.id === tenant);
+  if (window.ATELIER_SERVER || !DemoAccess.open() || !profile) {
     bar?.remove();
     return;
   }
@@ -31,8 +32,7 @@ function showcasePaint() {
     bar.id = 'showcase-bar';
     content.before(bar);
   }
-  bar.innerHTML =
-    '<span><strong>Démo complète</strong> · troupe fictive, essais conservés dans ce navigateur</span><a href="#parcours-demo">Reprendre le parcours</a>';
+  bar.innerHTML = `<div><span class="demo-profile-kicker">Vous explorez une troupe fictive</span><strong>${esc(profile.name)}</strong><span class="demo-profile-format">${esc(profile.format)}</span><small>Essayez les outils, puis changez de troupe pour découvrir un autre format.</small></div><div class="demo-profile-actions"><button type="button" class="secondary" data-demo-switch>Changer de troupe</button>${showcaseActive() ? '<a href="#parcours-demo">Reprendre le parcours</a>' : ''}</div>`;
 }
 const showcaseRenderBefore = render;
 render = function () {
@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('click', (event) => {
   const button = event.target.closest('button');
   if (!button) return;
+  if (button.hasAttribute('data-demo-switch') && !window.ATELIER_SERVER) {
+    selector.focus();
+    try {
+      selector.showPicker?.();
+    } catch {}
+    return;
+  }
   if (button.hasAttribute('data-showcase-start')) {
     showcaseStart();
     return;

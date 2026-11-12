@@ -8,6 +8,17 @@ if (!window.ATELIER_SERVER && window.DEMO_TROUPES?.paves) {
   troupe.city = 'Saint-Nazaire · implantation fictive';
   window.DEMO_TROUPES.vitrine = troupe;
 }
+// Three public entry profiles. Legacy browser workspaces remain untouched.
+if (!window.ATELIER_SERVER)
+  window.DEMO_PROFILES = [
+    { id: 'vitrine', name: 'Les Pavés Bavards', format: 'Trio itinérant · théâtre de rue' },
+    { id: 'poche', name: 'Le Fil de Poche', format: 'Duo intimiste · théâtre d’objets' },
+    {
+      id: 'traversees',
+      name: 'Les Grandes Traversées',
+      format: 'Grande forme · cirque et musique',
+    },
+  ];
 function seedShowcase(company) {
   if (!company.showcase || window.ATELIER_SERVER) return {};
   const members = company.team.map(([name]) => name),

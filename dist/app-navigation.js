@@ -53,6 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const identity = document.createElement('div');
   identity.className = 'app-identity';
   identity.append(aside.querySelector('.brand'), aside.querySelector('.troupe-label'), selector);
+  if (!window.ATELIER_SERVER && window.DEMO_PROFILES) {
+    const picker = document.createElement('div');
+    picker.className = 'demo-profile-picker';
+    const label = identity.querySelector('.troupe-label');
+    label.textContent = 'Votre troupe de démonstration';
+    label.classList.add('demo-profile-label');
+    const hint = document.createElement('small');
+    hint.id = 'demo-profile-hint';
+    hint.textContent = '3 profils fictifs · changez de troupe ici';
+    selector.setAttribute('aria-describedby', hint.id);
+    picker.append(label, selector, hint);
+    identity.append(picker);
+  }
   const actions = document.createElement('div');
   actions.className = 'app-bar-actions';
   const search = document.querySelector('.ops-global-search'),
