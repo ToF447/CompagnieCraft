@@ -1,4 +1,4 @@
-<p><img src="dist/assets/brand/compagniecraft.png" alt="Logo CompagnieCraft" width="320"></p>
+<p><img src="dist/assets/brand/compagniecraft-transparent.png" alt="Logo CompagnieCraft" width="320"></p>
 
 # CompagnieCraft
 
