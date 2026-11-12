@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     caption.setAttribute('aria-label', 'Retour à l’accueil de CompagnieCraft');
     caption.dataset.help = 'Revient à la page d’accueil et de présentation de CompagnieCraft.';
     caption.innerHTML =
-      '<span class="cc-art-logo"><img src="assets/brand/compagniecraft-transparent.png" alt="CompagnieCraft" width="1536" height="1024"></span>';
+      '<span class="cc-art-logo"><img src="assets/brand/compagniecraft-halo.png" alt="CompagnieCraft" width="1536" height="1024"></span>';
     banner.append(caption);
     // One animation frame per scroll update, no work once the banner is offscreen.
     // The accessibility preference also disables motion when changed mid-session.
