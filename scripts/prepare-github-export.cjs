@@ -18,7 +18,7 @@ const files = new Set(
     .split('\0')
     .filter(Boolean),
 );
-const excluded = new Set(['.openai/hosting.json']);
+const excluded = new Set(['.openai/hosting.json', '.hostinger/site.json']);
 let count = 0;
 for (const file of files) {
   if (excluded.has(file)) continue;

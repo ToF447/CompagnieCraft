@@ -20,3 +20,4 @@
 *.pem
 *.key
 *.zip
+/.hostinger/site.json

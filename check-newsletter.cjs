@@ -72,11 +72,7 @@ assert(ctx.darkHTML.includes(ctx.colors.text));
 assert(ctx.darkHTML.includes(ctx.colors.paper));
 console.log('Newsletter : export sûr, crédits, dates choisies, sauvegarde et isolation vérifiés.');
 const { spawnSync } = require('node:child_process');
-const php =
-  process.env.ATELIER_PHP ||
-  (fs.existsSync('../site-artistique/.runtime/php/php.exe')
-    ? '../site-artistique/.runtime/php/php.exe'
-    : 'php');
+const php = process.env.ATELIER_PHP || 'php';
 const script = `function fail($code,$message){throw new Exception($message);} function clean_text($s,$max,$label,$required=false){if(!is_string($s)||strlen($s)>$max*4||($required&&trim($s)===''))throw new Exception($label);return trim($s);} require 'backend/src/newsletter.php'; $n=json_decode(stream_get_contents(STDIN),true);validate_newsletter(['newsletter'=>$n]);$n['blocks'][0]['url']='javascript:alert(1)';try{validate_newsletter(['newsletter'=>$n]);exit(2);}catch(Exception $e){} echo 'PHP newsletter valide et URL dangereuse rejetée.';`;
 const result = spawnSync(php, ['-r', script], {
   input: JSON.stringify(ctx.saved),

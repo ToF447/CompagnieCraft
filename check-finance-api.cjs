@@ -5,11 +5,7 @@ const fs = require('node:fs'),
   { spawn, spawnSync } = require('node:child_process'),
   assert = require('node:assert/strict');
 const root = __dirname,
-  php =
-    process.env.ATELIER_PHP ||
-    (process.platform === 'win32'
-      ? path.resolve(root, '../site-artistique/.runtime/php/php.exe')
-      : 'php'),
+  php = process.env.ATELIER_PHP || 'php',
   ext = path.join(path.dirname(php), 'ext'),
   runtime = fs.mkdtempSync(path.join(root, '.runtime-backend-'));
 // Disposable local fixtures contain generated credentials only in process memory.
@@ -24,7 +20,7 @@ fs.writeFileSync(
 );
 const env = { ...process.env, ATELIER_CONFIG: config },
   args =
-    process.platform === 'win32'
+    process.platform === 'win32' && fs.existsSync(path.join(ext, 'php_pdo_sqlite.dll'))
       ? ['-d', 'extension_dir=' + ext, '-d', 'extension=pdo_sqlite']
       : [];
 function cli(action, input) {

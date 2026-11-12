@@ -309,7 +309,7 @@ function resources() {
       )
       .join(
         '',
-      )}<section class="panel note"><h2>Les ressources DSAP existent déjà.</h2><p>Elles restent dans l’espace privé actuel de la compagnie. Une connexion à votre compte est nécessaire.</p><a class="secondary" href="https://compagniedusolauplafond.fr/api/admin.php?action=press-page" target="_blank" rel="noopener">Ouvrir les ressources DSAP ↗</a></section></div>`
+      )}<section class="panel note"><h2>Les ressources de votre troupe</h2><p>Retrouvez ici les documents que votre troupe choisit de préparer et de partager. Aucun espace privé externe n’est relié automatiquement.</p></section></div>`
   );
 }
 function communication() {
@@ -320,7 +320,7 @@ function communication() {
       'Donner des <em>nouvelles.</em>',
       'Préparer les communications depuis les contenus validés et préserver les préférences de chaque destinataire.',
     ) +
-    `<div class="grid"><section class="panel"><h2>Newsletter & contacts abonnés</h2><p>Le moteur de newsletter existe dans l’administration DSAP. Cet aperçu n’envoie aucun message et ne copie aucun contact.</p><a class="primary" href="https://compagniedusolauplafond.fr/admin/" target="_blank" rel="noopener">Ouvrir l’admin DSAP ↗</a><p class="muted">Puis choisir Newsletter dans le menu.</p></section><section class="panel"><h2>Le site public de chaque troupe</h2><p>La gestion des textes, des images et des dates fait partie des outils à raccorder au service.</p><span class="tag">Connexion par troupe à construire</span></section></div>`
+    `<div class="grid"><section class="panel"><h2>Newsletter & contacts abonnés</h2><p>Préparez vos messages et vérifiez les destinataires depuis votre espace. Aucun service d’envoi externe n’est relié automatiquement.</p></section><section class="panel"><h2>Le site public de chaque troupe</h2><p>La gestion des textes, des images et des dates fait partie des outils à raccorder au service.</p><span class="tag">Connexion par troupe à construire</span></section></div>`
   );
 }
 function troupe() {
