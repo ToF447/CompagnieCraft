@@ -24,6 +24,25 @@ Le code est gratuit à consulter, installer et adapter sous licence **MIT**. Le 
 
 **Cette version est une version de développement.** La démonstration locale utilise des données fictives. Les pistes de recherche ne garantissent ni une candidature ouverte, ni une date disponible. Les fonctions de partage et les comptes réels nécessitent un serveur configuré ; ils ne sont pas activés par le simple lancement de la démo.
 
+## Choisir son mode d’utilisation
+
+| Pour quoi faire ? | Où commencer ? |
+| --- | --- |
+| Découvrir avec une troupe fictive | [Démo et limites](docs/demo.md) |
+| Installer la démo sur son ordinateur | [Notice pas à pas](INSTALLATION.md) |
+| Préparer un service partagé PHP sur Hostinger | [Migration et raccordements restants](backend/MIGRATION.md) |
+| Comprendre ce qui fonctionne dans chaque mode | [Tableau de disponibilité](docs/disponibilite.md) |
+
+**La démo Node.js et le service PHP multiutilisateur sont deux distributions différentes**, même lorsqu’elles sont hébergées chez Hostinger. La recherche publique de lieux n’est pas encore raccordée au paquet PHP.
+
+## Un outil libre, un service à entretenir
+
+Le code est libre ; la participation envisagée finance l’hébergement et l’entretien, sans vente par module. Accès solidaire, contributions reconnues et Chapeau facultatif font partie du [modèle économique](MODELE-ECONOMIQUE.md). **Aucun tarif n’est arrêté et aucun paiement du service n’est activé.**
+
+## Participer aux prochains essais
+
+La priorité est de vérifier le parcours **spectacle → lieu → candidature → relance → date** avec trois troupes pilotes. Le [protocole d’essai](docs/troupes-pilotes.md) précise les étapes et permet de signaler un blocage sans savoir coder. Consulter la [feuille de route](ROADMAP.md) pour les priorités et les petites contributions possibles.
+
 ## Essayer la démo en ligne
 
 La [démo en ligne](https://compagniecraft.org) s’ouvre dans un navigateur sur Windows, macOS, Linux, Android ou iOS, sans installation. Son accès dépend de la protection de l’hébergement actuel.
