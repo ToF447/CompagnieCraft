@@ -21,7 +21,7 @@ Un hébergement statique seul ne peut pas exécuter les services serveur. Le paq
 
 `npm run check` lance les vérifications locales. Les vérifications PHP s’ajoutent avec `npm run check -- --php` et les prérequis du guide de reprise.
 
-Un modèle GitHub Actions est fourni dans [docs/ci/](docs/ci/README.md). Il n’est pas activé dans ce dépôt.
+Les contrôles GitHub Actions sont activés : voir [leur fonctionnement](docs/ci/README.md) et les résultats dans l’onglet Actions.
 
 ## Licence
 

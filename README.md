@@ -2,6 +2,8 @@
 
 # CompagnieCraft
 
+[![Contrôles JavaScript et PHP](https://github.com/ToF447/CompagnieCraft/actions/workflows/checks.yml/badge.svg)](https://github.com/ToF447/CompagnieCraft/actions/workflows/checks.yml)
+
 CompagnieCraft est un logiciel libre en développement pour les petites troupes et associations du spectacle vivant. Il réunit des outils de prospection, de suivi des candidatures et d’organisation du travail artistique.
 
 Le code est gratuit à consulter, installer et adapter sous licence **AGPL-3.0-only**. Le projet s’appuie sur le partage de connaissances et l’échange entre les personnes.

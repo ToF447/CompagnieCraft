@@ -1,22 +1,42 @@
 name: Vérifications de CompagnieCraft
-on: [push, pull_request, workflow_dispatch]
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    name: JavaScript et PHP
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      ATELIER_PHP: php
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Lire les sources
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Préparer Node.js 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci
-      - name: Vérifier la lisibilité et la syntaxe
+      - name: Installer les outils de développement
+        run: npm ci
+      - name: Vérifier la configuration PHP
+        run: php -r "if (PHP_VERSION_ID < 80200 || !extension_loaded('pdo_sqlite')) { fwrite(STDERR, 'PHP 8.2+ avec PDO SQLite requis.'); exit(1); }"
+      - name: Vérifier la mise en forme
         run: npm run format:check
-      - name: Vérifier PHP SQLite
-        run: php -r "if (!extension_loaded('pdo_sqlite')) exit(1);"
-      - name: Tous les contrôles locaux et API fictives
-        env:
-          ATELIER_PHP: php
+      - name: Construire et exécuter les contrôles JavaScript et PHP
         run: npm run check -- --php
+      - name: Vérifier les dépendances
+        run: npm audit --audit-level=high
