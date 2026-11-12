@@ -2,6 +2,10 @@
 
 # CompagnieCraft
 
+### [▶ Essayer la démo en ligne](https://compagniecraft.org)
+
+Dans votre navigateur, sans installation. Sur le site, choisissez **Essayer la démo complète** pour explorer les outils avec une troupe fictive.
+
 [![Contrôles JavaScript et PHP](https://github.com/ToF447/CompagnieCraft/actions/workflows/checks.yml/badge.svg)](https://github.com/ToF447/CompagnieCraft/actions/workflows/checks.yml)
 
 CompagnieCraft est un logiciel libre en développement pour les petites troupes et associations du spectacle vivant. Il réunit des outils de prospection, de suivi des candidatures et d’organisation du travail artistique.
