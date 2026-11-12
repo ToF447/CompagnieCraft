@@ -68,7 +68,7 @@ L’ordre de chargement figure dans `dist/index.html` et `mvc-manifest.json`. Ce
 - La démo `admin/admin` ouvre des données fictives ; ce n’est pas une authentification serveur. Le sélecteur de troupe n’est pas une barrière de sécurité.
 - Sites possède ses services Worker et sa politique d’accès. Hostinger possède un backend PHP distinct : tous les services Worker n’y sont pas encore portés. Lire [venue-search.md](venue-search.md) et `backend/DEPLOY.md` avant de promettre une équivalence.
 - Un annuaire n’établit ni la programmation actuelle, ni une candidature ouverte, ni une place disponible. Les dates futures ne sont jamais reconduites automatiquement. Une information manquante reste inconnue.
-- Le code original est distribué sous AGPL-3.0-only ; les ressources tierces gardent leurs licences. La distribution publique est un instantané contrôlé, sans historique de développement ni configuration du Site personnel.
+- Le code original est distribué sous MIT ; les ressources tierces gardent leurs licences. La distribution publique est un instantané contrôlé, sans historique de développement ni configuration du Site personnel.
 
 ## Ajouter un outil ou modifier une règle
 

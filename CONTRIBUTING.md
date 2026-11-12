@@ -12,6 +12,6 @@ Commencer par le [guide de reprise](docs/maintainer-guide.md) et l’[architectu
 
 Les dépendances de développement ne doivent pas devenir nécessaires aux utilisateurs. Les outils restent gratuits ; l’utilisation d’un service externe facultatif doit expliquer ses éventuels frais. Aucun contact ni partage communautaire ne doit être envoyé implicitement.
 
-Le code original est sous AGPL-3.0-only, comme précisé dans LICENSE et NOTICE.md. Les ressources tierces conservent leurs crédits et licences. Le dépôt public de distribution part d’un instantané contrôlé ; ne recopiez jamais l’historique privé de développement ni une configuration personnelle dans une contribution.
+Le code original est sous MIT, comme précisé dans LICENSE et NOTICE.md. Les ressources tierces conservent leurs crédits et licences. Le dépôt public de distribution part d’un instantané contrôlé ; ne recopiez jamais l’historique privé de développement ni une configuration personnelle dans une contribution.
 
 Les changements visuels communs doivent être vérifiés sur l’accueil public ET dans l’espace connecté. Le patchwork utilise le rendu partagé SceneBanner : ne pas réintroduire une galerie publique fixe indépendante de la collection administrée.

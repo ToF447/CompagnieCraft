@@ -54,7 +54,7 @@ const pkg = {
   version: '1.0.0',
   private: true,
   type: 'module',
-  license: 'AGPL-3.0-only',
+  license: 'MIT',
   engines: { node: '>=22.13.0' },
   scripts: { start: 'node server.mjs', build: 'node --check server.mjs' },
 };

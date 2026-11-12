@@ -4,7 +4,11 @@ Copyright © 2026 ToF447 et les contributeurs de CompagnieCraft.
 
 Développement initial : **ToF** (ToF447).
 
-Le code original et la documentation originale du projet sont distribués sous **GNU Affero General Public License version 3 uniquement**, identifiant SPDX `AGPL-3.0-only`. Le texte intégral figure dans [LICENSE](LICENSE). Le logiciel est fourni sans garantie ; les conditions complètes de la licence font foi.
+Le code original et la documentation originale du projet sont distribués sous **MIT**, identifiant SPDX `MIT`. Le texte intégral figure dans [LICENSE](LICENSE). Le logiciel est fourni sans garantie ; les conditions complètes de la licence font foi.
+
+La licence MIT permet l’utilisation, la modification, la redistribution et la vente, y compris dans un logiciel propriétaire. Elle impose la conservation de la notice de copyright et du texte de licence dans les copies ou parties substantielles du logiciel. Elle n’impose pas la publication des modifications.
+
+Ce changement s’applique à cette version du code original. Les anciennes versions publiées conservent les droits déjà accordés par leurs licences.
 
 Les ressources tierces conservent leurs licences propres :
 
@@ -16,4 +20,4 @@ Les ressources tierces conservent leurs licences propres :
 - Exercices externes lus par le service : aucun catalogue de consignes tierces n’est inclus dans le dépôt. La lecture intégrée respecte l’avis de licence de chaque page et affiche ses crédits. Ces textes ne deviennent pas des œuvres originales de CompagnieCraft.
 - Les bibliothèques de développement installées par npm conservent leurs licences. Elles ne sont pas redistribuées dans ce dépôt ni nécessaires au navigateur.
 
-Les données personnelles, dossiers privés de troupes et contributions des utilisateurs ne sont pas placés sous l’AGPL par la publication du code. Leur partage reste un choix distinct. La licence du code n’accorde aucun droit sur une création artistique appartenant à un tiers.
+Les données personnelles, dossiers privés de troupes et contributions des utilisateurs ne sont pas placés sous la licence MIT par la publication du code. Leur partage reste un choix distinct. La licence du code n’accorde aucun droit sur une création artistique appartenant à un tiers.

@@ -10,7 +10,7 @@ Dans votre navigateur, sans installation. Sur le site, choisissez **Essayer la d
 
 CompagnieCraft est un logiciel libre en développement pour les petites troupes et associations du spectacle vivant. Il réunit des outils de prospection, de suivi des candidatures et d’organisation du travail artistique.
 
-Le code est gratuit à consulter, installer et adapter sous licence **AGPL-3.0-only**. Le projet s’appuie sur le partage de connaissances et l’échange entre les personnes.
+Le code est gratuit à consulter, installer et adapter sous licence **MIT**. Le projet s’appuie sur le partage de connaissances et l’échange entre les personnes.
 
 ## Ce que contient cette version
 

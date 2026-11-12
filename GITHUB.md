@@ -25,4 +25,4 @@ Les contrôles GitHub Actions sont activés : voir [leur fonctionnement](docs/ci
 
 ## Licence
 
-Le code original est sous AGPL-3.0-only. Les ressources tierces gardent leurs licences et crédits : voir [LICENSE](LICENSE) et [NOTICE.md](NOTICE.md).
+Le code original est sous MIT. Les ressources tierces gardent leurs licences et crédits : voir [LICENSE](LICENSE) et [NOTICE.md](NOTICE.md).
