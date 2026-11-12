@@ -26,3 +26,8 @@ html[data-ui-density=compact] #personal-shortcuts .personal-shortcut{min-height:
 html[data-ui-text=large] #personal-shortcuts{font-size:17px}
 @media(max-width:1000px){#personal-shortcuts{grid-template-columns:120px minmax(0,1fr) auto;gap:12px}.personal-shortcut-copy small{font-size:.75em}#personal-shortcuts .personal-shortcut{flex-basis:160px;padding-inline:10px;gap:9px}}
 @media(max-width:720px){#personal-shortcuts{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px 16px;font-size:14px}.personal-workbar-title{display:flex;align-items:baseline;gap:10px}.personal-workbar-title>span{max-width:48vw}.personal-workbar-links{grid-column:1/-1;grid-row:2;gap:8px;padding:6px 6px 8px}#personal-shortcuts .personal-adjust{grid-column:2;grid-row:1;min-height:36px;padding:4px;font-size:12px}#personal-shortcuts .personal-shortcut{flex-basis:180px;min-height:58px}.personal-shortcut-icon svg{width:22px;height:22px}.personal-shortcut-arrow{font-size:22px}}
+
+/* Current location: the same line-icon language and theme tokens as the shortcuts. */
+.personal-workbar-title .personal-location-icon{display:inline-flex;align-items:center;justify-content:flex-start;width:40px;height:34px;color:var(--ui-accent);overflow:visible;font-size:inherit}
+.personal-location-icon svg{display:block;width:30px;height:30px}
+@media(max-width:720px){.personal-workbar-title .personal-location-icon{width:30px;height:30px;flex-shrink:0}.personal-location-icon svg{width:26px;height:26px}}

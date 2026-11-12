@@ -117,7 +117,9 @@ async function refreshOpportunitySource(env, id, fetcher = fetch, now = new Date
   }
 }
 async function opportunityService(request, env) {
-  if (!request.headers.get('oai-authenticated-user-id'))
+  // The independent public demo exposes only this public-source cache. Its HTTP
+  // adapter blocks every personal API; no visitor header can enable this flag.
+  if (!request.headers.get('oai-authenticated-user-id') && env?.PUBLIC_OPPORTUNITY_DEMO !== true)
     return opportunityResponse(
       { message: 'Votre identité personnelle Sites est nécessaire.' },
       401,

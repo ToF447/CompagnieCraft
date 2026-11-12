@@ -73,6 +73,7 @@ function seed() {
     const copy = JSON.parse(JSON.stringify(company));
     return {
       version: 1,
+      ...(typeof seedShowcase === 'function' ? seedShowcase(copy) : {}),
       company: copy,
       profile: { name: copy.name, shows: copy.shows.map((s) => s.name) },
       requests: copy.requests.map((r) => ({

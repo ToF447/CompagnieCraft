@@ -1,3 +1,5 @@
+<p><img src="dist/assets/brand/compagniecraft.png" alt="Logo CompagnieCraft" width="320"></p>
+
 # CompagnieCraft
 
 CompagnieCraft est un logiciel libre en développement pour les petites troupes et associations du spectacle vivant. Il réunit des outils de prospection, de suivi des candidatures et d’organisation du travail artistique.
@@ -14,7 +16,15 @@ Le code est gratuit à consulter, installer et adapter sous licence **AGPL-3.0-o
 
 **Cette version est une version de développement.** La démonstration locale utilise des données fictives. Les pistes de recherche ne garantissent ni une candidature ouverte, ni une date disponible. Les fonctions de partage et les comptes réels nécessitent un serveur configuré ; ils ne sont pas activés par le simple lancement de la démo.
 
-## Essayer la démonstration en local
+## Essayer la démo en ligne
+
+La [démo en ligne](https://compagniecraft.org) s’ouvre dans un navigateur sur Windows, macOS, Linux, Android ou iOS, sans installation. Son accès dépend de la protection de l’hébergement actuel.
+
+Le bouton **Essayer la démo complète** ouvre un parcours avec une troupe fictive : spectacles, candidatures, projet de tournée, budget, planning et feuille de route. Les textes, disponibilités et retours communautaires y disposent d’un bac à sable local clairement signalé. Aucune invitation, publication ou transaction réelle n’est déclenchée par ce scénario.
+
+## Installer la démonstration sur son ordinateur
+
+**Première installation ? Suivez la [notice pas à pas](INSTALLATION.md)** : téléchargement, Windows/macOS/Linux, démarrage, données et dépannage. Elle précise les fonctions disponibles et celles qui ne sont pas raccordées dans la démo.
 
 Prérequis : Node.js 22.13 ou plus récent et npm. Les recherches en direct demandent une connexion Internet.
 
@@ -39,5 +49,7 @@ Les sources de l’interface sont dans `dist/`, les services serveur dans `worke
 Les contrôles locaux se lancent avec `npm run check`. Les contrôles PHP supplémentaires demandent PHP 8.2+ avec PDO SQLite : `npm run check -- --php`.
 
 ## Licence et crédits
+
+**Développement initial : ToF.**
 
 Voir [LICENSE](LICENSE) et [NOTICE.md](NOTICE.md). Les photographies, polices et données tierces conservent leurs licences et leurs crédits.

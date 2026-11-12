@@ -2,6 +2,8 @@
  * Explain personal-account usage separately from the current demo's storage.
  * Used by the public landing and the workspace information forms. */
 function dataConditionsHTML() {
+  if (window.ATELIER_DEMO_HOST)
+    return '<details class="data-conditions"><summary>Où sont conservés mes essais ?</summary><p>Cette démonstration publique ne crée pas de compte personnel. Les fiches, textes, disponibilités simulées et préférences restent dans le stockage de votre navigateur. Ils ne sont pas partagés entre ordinateurs et peuvent être perdus si vous effacez ce stockage.</p><p>Le serveur interroge les sources publiques pour les recherches et conserve un cache temporaire des annonces publiques. Les sources et l’hébergeur peuvent conserver leurs propres journaux techniques. Aucun paiement, e-mail ou publication communautaire n’est déclenché par le bac à sable.</p><p>N’utilisez pas cette démonstration pour des renseignements confidentiels. Une piste de recherche ne garantit ni disponibilité ni candidature ouverte.</p></details>';
   const demo = !window.ATELIER_SERVER;
   return `<details class="data-conditions"><summary>Où sont conservés mes renseignements ?</summary>
     <h3>Avec un compte personnel</h3>

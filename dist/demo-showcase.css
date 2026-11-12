@@ -1,0 +1,24 @@
+#showcase-bar { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 1.25rem; border-bottom:1px solid var(--ui-border, #d6d2ce); background:var(--ui-paper, #fff); font-size:.9rem; }
+#showcase-bar a { white-space:nowrap; font-weight:700; }
+.showcase-intro { display:grid; grid-template-columns:1fr 10rem; gap:2rem; margin:1rem 0 1.5rem; align-items:center; }
+.showcase-intro p { max-width:68ch; }
+.showcase-progress { display:grid; gap:.4rem; }
+.showcase-progress strong { font-size:2rem; }
+.showcase-progress progress { width:100%; accent-color:var(--ui-accent, #cd2d14); }
+.showcase-journey { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 2rem; }
+.showcase-journey li { border-top:1px solid var(--ui-border, #d6d2ce); }
+.showcase-journey a { display:flex; gap:1rem; padding:1rem 0; text-decoration:none; align-items:flex-start; color:inherit; }
+.showcase-journey a:hover strong { text-decoration:underline; }
+.showcase-number { display:grid; place-items:center; flex-shrink:0; width:1.8rem; height:1.8rem; border-radius:50%; background:var(--ui-soft, #f4efeb); font-weight:700; }
+.showcase-journey strong { display:block; font-size:1.05rem; }
+.showcase-journey small { display:block; margin-top:.35rem; line-height:1.55; }
+.showcase-workbench { display:grid; grid-template-columns:1.3fr 1fr; gap:1.25rem; }
+.showcase-workbench textarea { width:100%; resize:vertical; }
+.showcase-workbench label { display:grid; gap:.4rem; margin-bottom:1rem; }
+.showcase-simulation { padding:.8rem 1rem; border-left:3px solid var(--ui-accent, #cd2d14); margin:1rem 0; max-width:80ch; }
+.showcase-version { padding:.75rem 0; border-bottom:1px solid var(--ui-border, #d6d2ce); }
+.showcase-version p { white-space:pre-wrap; }
+.showcase-facts { display:flex; flex-wrap:wrap; gap:1rem 2rem; }
+.showcase-facts dt { font-weight:700; }.showcase-facts dd { margin:0; }
+.showcase-start-note small { display:block; margin-top:.5rem; }
+@media(max-width:720px) { .showcase-journey,.showcase-workbench,.showcase-intro { grid-template-columns:1fr; } #showcase-bar { flex-wrap:wrap; } .showcase-progress { max-width:14rem; } }

@@ -2,6 +2,8 @@
 
 Copyright © 2026 ToF447 et les contributeurs de CompagnieCraft.
 
+Développement initial : **ToF** (ToF447).
+
 Le code original et la documentation originale du projet sont distribués sous **GNU Affero General Public License version 3 uniquement**, identifiant SPDX `AGPL-3.0-only`. Le texte intégral figure dans [LICENSE](LICENSE). Le logiciel est fourni sans garantie ; les conditions complètes de la licence font foi.
 
 Les ressources tierces conservent leurs licences propres :
