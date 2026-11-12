@@ -7,6 +7,7 @@ import {
   venuePublicAddress,
   venueSearchRun,
   venueFutureEvents,
+  venuePastEvents,
 } from './worker/venue-search-engine.mjs';
 const now = '2026-11-05T12:00:00Z',
   record = {
@@ -14,6 +15,15 @@ const now = '2026-11-05T12:00:00Z',
     'Commune principale de déroulement': 'Quimperlé',
     'Site internet du festival': 'https://lesrias.example/',
   };
+const historyText =
+  'Festival Les Rias : du 22 au 25 août 2025.\nFestival Les Rias : du 25 au 28 août 2027.';
+assert.equal(venuePastEvents('', historyText, record, now)[0].start, '2025-08-22');
+assert.equal(venueFutureEvents('', historyText, record, now)[0].start, '2027-08-25');
+assert.equal(
+  venuePastEvents('', 'Publication mise à jour le 12 août 2025.', record, now).length,
+  0,
+);
+assert.equal(venuePastEvents('', 'Festival annulé du 22 au 25 août 2025.', record, now).length, 0);
 const page = (body) =>
   '<html><title>Festival Les Rias · théâtre de rue</title><main>' + body + '</main></html>';
 const real = page(

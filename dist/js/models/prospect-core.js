@@ -178,6 +178,10 @@ function normalizeDirectoryRow(kind, row) {
     directory: true,
     directoryResource: def.resource,
     genre: String(genre || ''),
+    historicalPeriod:
+      kind === 'festivals'
+        ? String(row['Période principale de déroulement du festival'] || '').slice(0, 180)
+        : '',
     evidence: 'Fiche issue de ' + def.label + '. ' + def.note,
     process:
       'Vérifier le site officiel, le bon interlocuteur et la prochaine saison avant toute démarche.',
