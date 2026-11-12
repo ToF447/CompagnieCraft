@@ -2,6 +2,14 @@
 
 Commencer par le [guide de reprise](docs/maintainer-guide.md) et l’[architecture](ARCHITECTURE.md).
 
+## Contribuer sans coder
+
+Tester une installation, relire une notice, vérifier une source ou essayer le parcours d’une troupe aide directement le projet. Choisir une tâche dans la [feuille de route](ROADMAP.md) ou suivre le [protocole pilote](docs/troupes-pilotes.md). Pour partager un résultat, utiliser le modèle « Retour d’essai » des issues GitHub. Une contribution est volontaire et ne garantit pas une invitation au service hébergé.
+
+Les issues étant publiques, ne pas y déposer de données privées ou de sauvegarde de troupe.
+
+## Modifier le code
+
 1. Installer les outils de développement avec `npm ci`.
 2. Modifier les sources, jamais les paquets générés. Séparer modèle, vue, contrôleur et services.
 3. Expliquer les contrats, dépendances et choix dans les commentaires ; utiliser des noms explicites.
