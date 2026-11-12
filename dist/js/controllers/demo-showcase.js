@@ -1,4 +1,5 @@
 'use strict';
+let demoProfileChooserOpen = false;
 function showcaseStart() {
   if (window.ATELIER_SERVER) return;
   DemoAccess.login('admin', 'admin');
@@ -32,7 +33,7 @@ function showcasePaint() {
     bar.id = 'showcase-bar';
     content.before(bar);
   }
-  bar.innerHTML = `<div><span class="demo-profile-kicker">Vous explorez une troupe fictive</span><strong>${esc(profile.name)}</strong><span class="demo-profile-format">${esc(profile.format)}</span><small>Essayez les outils, puis changez de troupe pour découvrir un autre format.</small></div><div class="demo-profile-actions"><button type="button" class="secondary" data-demo-switch>Changer de troupe</button>${showcaseActive() ? '<a href="#parcours-demo">Reprendre le parcours</a>' : ''}</div>`;
+  bar.innerHTML = `<div><span class="demo-profile-kicker">Vous explorez une troupe fictive</span><strong>${esc(profile.name)}</strong><span class="demo-profile-format">${esc(profile.format)}</span><small>Essayez les outils, puis changez de troupe pour découvrir un autre format.</small></div><div class="demo-profile-actions"><button type="button" class="secondary" data-demo-switch aria-expanded="${demoProfileChooserOpen}" aria-controls="demo-profile-choices">Changer de troupe</button><div id="demo-profile-choices" class="demo-profile-choices" ${demoProfileChooserOpen ? '' : 'hidden'}><p>Choisissez une troupe de démonstration</p>${window.DEMO_PROFILES.map((item) => `<button type="button" data-demo-profile="${esc(item.id)}" ${item.id === tenant ? 'aria-current="true"' : ''}><strong>${esc(item.name)}</strong><small>${esc(item.format)}${item.id === tenant ? ' · profil actuel' : ''}</small></button>`).join('')}</div>${showcaseActive() ? '<a href="#parcours-demo">Reprendre le parcours</a>' : ''}</div>`;
 }
 const showcaseRenderBefore = render;
 render = function () {
@@ -92,13 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
   showcasePaint();
 });
 document.addEventListener('click', (event) => {
+  if (
+    demoProfileChooserOpen &&
+    !event.target.closest('#demo-profile-choices, [data-demo-switch]')
+  ) {
+    demoProfileChooserOpen = false;
+    showcasePaint();
+  }
   const button = event.target.closest('button');
   if (!button) return;
   if (button.hasAttribute('data-demo-switch') && !window.ATELIER_SERVER) {
-    selector.focus();
-    try {
-      selector.showPicker?.();
-    } catch {}
+    demoProfileChooserOpen = !demoProfileChooserOpen;
+    showcasePaint();
+    return;
+  }
+  if (
+    button.hasAttribute('data-demo-profile') &&
+    !window.ATELIER_SERVER &&
+    window.DEMO_PROFILES?.some((item) => item.id === button.dataset.demoProfile)
+  ) {
+    demoProfileChooserOpen = false;
+    selector.value = button.dataset.demoProfile;
+    selector.onchange();
+    document.querySelector('[data-demo-switch]')?.focus();
     return;
   }
   if (button.hasAttribute('data-showcase-start')) {
@@ -128,6 +145,13 @@ document.addEventListener('click', (event) => {
     }
   } catch (error) {
     notice(error.message);
+  }
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && demoProfileChooserOpen) {
+    demoProfileChooserOpen = false;
+    showcasePaint();
+    document.querySelector('[data-demo-switch]')?.focus();
   }
 });
 document.addEventListener('submit', (event) => {

@@ -27,8 +27,45 @@ function venueTroupeContext() {
     )}<p>Chaque spectacle est évalué séparément. Sans critère artistique commun établi, la fiche reste à explorer et ne devient pas une recommandation.</p><a href="#spectacles">Compléter les fiches des spectacles</a></details></details>`;
 }
 const venueCardBefore = prospectCard;
+function venueHistoryView(source) {
+  if (source.type !== 'festival') return '';
+  const norm = (value) =>
+    String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+  const reviewed = (window.ATELIER_FESTIVAL_HISTORY || []).find(
+    (row) => norm(row.name) === norm(source.name) && norm(row.city) === norm(source.city),
+  );
+  const today = day(0);
+  const editions = (reviewed?.editions || source.siteCheck?.pastEvents || [])
+    .filter((row) => /^20\d{2}-\d{2}-\d{2}$/.test(row.start) && (row.end || row.start) < today)
+    .slice(0, 3);
+  const period =
+    reviewed?.period ||
+    (editions.length
+      ? new Intl.DateTimeFormat('fr-FR', { month: 'long', timeZone: 'UTC' }).format(
+          new Date(editions[0].start + 'T12:00:00Z'),
+        ) + ' · dernière édition repérée'
+      : source.historicalPeriod);
+  if (!period && !editions.length) return '';
+  const link = (url, label) => {
+    const safe =
+      typeof prospectUrl === 'function'
+        ? prospectUrl(url)
+        : /^https:\/\//.test(url || '')
+          ? url
+          : '';
+    return safe
+      ? `<a href="${esc(safe)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`
+      : '';
+  };
+  return `<section class="venue-history"><strong>Repère des éditions précédentes</strong><p>${reviewed || editions.length ? 'Période observée' : 'Période indiquée par l’annuaire'} : <strong>${esc(period || 'Voir les anciennes dates')}</strong></p>${editions.length ? '<details><summary>Voir les dates et leurs sources</summary><ul>' + editions.map((row) => '<li>' + date(row.start) + (row.end && row.end !== row.start ? ' au ' + date(row.end) : '') + ' · ' + link(row.url || source.siteCheck?.finalUrl || source.website, 'Source') + '</li>').join('') + '</ul>' + (reviewed?.checked ? '<small>Archives consultées le ' + date(reviewed.checked) + '.</small>' : '') + '</details>' : link(source.source, 'Source de la période')}${reviewed?.note ? '<p><strong>' + esc(reviewed.note) + '</strong></p>' : ''}<small>Repère historique pour prospecter · prochaine édition et candidatures à confirmer.</small></section>`;
+}
 prospectCard = function (source) {
-  if (!source.siteCheck) return venueCardBefore(source);
+  if (!source.siteCheck)
+    return venueCardBefore(source).replace('</h2>', '</h2>' + venueHistoryView(source));
   const quality = venueQuality(source),
     check = source.siteCheck;
   const label = {
@@ -42,7 +79,7 @@ prospectCard = function (source) {
   }[quality.tier];
   let html = venueCardBefore(source);
   const facts = `<section class="venue-evidence" data-venue-checked="${esc(check.checkedAt || '')}"><strong>${esc(label)}</strong><p>${esc(quality.reason)}</p>${quality.shows.length ? '<p>Critères communs avec : ' + quality.shows.map(esc).join(', ') + '.</p>' : ''}${check.evidence?.length ? '<details><summary>Les éléments trouvés sur la source</summary>' + check.evidence.map((s) => '<blockquote>' + esc(s) + '</blockquote>').join('') + '</details>' : ''}${quality.events.length ? '<h3>Événements annoncés dans les 12 prochains mois</h3>' + quality.events.map((e) => '<p><strong>' + date(e.start) + (e.end !== e.start ? ' au ' + date(e.end) : '') + '</strong> · ' + esc(e.title) + '</p><details><summary>Preuve de la date publiée</summary><p>' + esc(e.proof) + '</p></details>').join('') : '<p>Aucune date d’événement dans les 12 prochains mois n’a été établie par ce contrôle.</p>'}<small>${check.checkedAt ? 'Contrôle du ' + esc(new Intl.DateTimeFormat('fr-FR', { dateStyle: 'short', timeStyle: 'medium', timeZone: 'Europe/Paris' }).format(new Date(check.checkedAt))) + ' · Paris. ' : ''}Aucune disponibilité ni candidature ouverte n’est déduite.</small></section>`;
-  html = html.replace('</h2>', '</h2>' + facts);
+  html = html.replace('</h2>', '</h2>' + venueHistoryView(source) + facts);
   if (quality.tier !== 'relevant')
     html = html.replace(
       /(<button[^>]*data-prospect-start="[^"]*")(?![^>]*\bdisabled)/g,

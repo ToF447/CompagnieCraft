@@ -135,3 +135,40 @@ assert.equal(
   'Missing show form is unknown, not an artistic mismatch',
 );
 ctx.tagsForShow = originalTags;
+
+// Historic context must never promote an unknown venue into a dated recommendation.
+ctx.window.ATELIER_FESTIVAL_HISTORY = [
+  {
+    name: 'Trajectoires',
+    city: 'Nantes',
+    period: 'Janvier',
+    checked: '2026-11-05',
+    editions: [
+      {
+        start: '2025-01-16',
+        end: '2025-01-31',
+        url: 'https://festival-trajectoires.com/edition-precedentes/',
+      },
+    ],
+  },
+];
+assert.match(
+  run('venueHistoryView({type:"festival",name:"Trajectoires",city:"Nantes"})'),
+  /2025-01-16/,
+);
+assert.match(
+  run('venueHistoryView({type:"festival",name:"Trajectoires",city:"Nantes"})'),
+  /prochaine édition et candidatures à confirmer/,
+);
+assert.equal(run('venueHistoryView({type:"festival",name:"Trajectoires",city:"Paris"})'), '');
+assert.match(
+  run('venueHistoryView({type:"festival",historicalPeriod:"Été",source:"https://data.gouv.fr"})'),
+  /Période indiquée par l’annuaire/,
+);
+assert.equal(run('venueHistoryView({type:"venue",historicalPeriod:"Été"})'), '');
+assert.equal(
+  run(
+    'venueQuality({...source,siteCheck:{...source.siteCheck,events:[],pastEvents:[{start:"2025-01-16",end:"2025-01-31"}]}}).events.length',
+  ),
+  0,
+);

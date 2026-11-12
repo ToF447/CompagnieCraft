@@ -57,7 +57,7 @@ export function venueIsoDate(y, m, d) {
 }
 // Only explicit dated event material qualifies for the next-year result set.
 // A publication date, an application deadline and a recurring month do not.
-export function venueFutureEvents(html, text, record, now) {
+function venueDatedEvents(html, text, record, now, historical = false) {
   const window = venueWindow(now),
     events = [],
     seen = new Set();
@@ -70,8 +70,9 @@ export function venueFutureEvents(html, text, record, now) {
       !/^20\d{2}-\d{2}-\d{2}$/.test(end) ||
       !venueIsoDate(...end.split('-')) ||
       end < start ||
-      start < window.start ||
-      start > window.end ||
+      (historical
+        ? end >= window.start || Number(start.slice(0, 4)) < Number(window.start.slice(0, 4)) - 5
+        : start < window.start || start > window.end) ||
       cancelled
     )
       return;
@@ -190,6 +191,14 @@ export function venueFutureEvents(html, text, record, now) {
     if (eligible(c)) add('', venueIsoDate(m[3], m[2], m[1]), '', c);
   }
   return events.sort((a, b) => a.start.localeCompare(b.start));
+}
+export function venueFutureEvents(html, text, record, now) {
+  return venueDatedEvents(html, text, record, now);
+}
+export function venuePastEvents(html, text, record, now) {
+  return venueDatedEvents(html, text, record, now, true)
+    .sort((a, b) => b.start.localeCompare(a.start))
+    .slice(0, 3);
 }
 export function venueDirectoryQuery(params) {
   const allowed = [
@@ -452,6 +461,9 @@ export function venuePageEvidence(record, html, finalUrl, now) {
     tags: identified && reception ? tags : [],
     events:
       identified && reception && tags.length ? venueFutureEvents(html, text, record, now) : [],
+    pastEvents: identified
+      ? venuePastEvents(html, text, record, now).map((event) => ({ ...event, url: finalUrl }))
+      : [],
     callStatus: 'not_established',
   };
 }
@@ -590,7 +602,15 @@ export async function venueInspect(
           if (extra.ok) {
             const second = await venueReadPage(extra),
               combined = readEvidence(record, html + '\n' + second, agenda, now);
-            if (combined.events?.length || result.status !== 'artistic') return combined;
+            if (combined.events?.length || result.status !== 'artistic') {
+              combined.pastEvents = (combined.pastEvents || []).map(
+                (event) =>
+                  result.pastEvents?.find(
+                    (old) => old.start === event.start && old.end === event.end,
+                  ) || event,
+              );
+              return combined;
+            }
           }
         } catch {}
       }

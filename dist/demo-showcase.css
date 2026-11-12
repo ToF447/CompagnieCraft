@@ -36,3 +36,15 @@
 .demo-profile-actions { display:flex; align-items:center; flex-wrap:wrap; gap:.8rem; flex-shrink:0; }
 #showcase-bar button { margin:0; min-height:42px; }
 @media(max-width:720px) { .app-bar .demo-profile-picker { max-width:100%; flex:1; } .demo-profile-actions { width:100%; } .demo-profile-format { display:block; } }
+
+.demo-profile-actions { position:relative; }
+.demo-profile-choices { position:absolute; top:calc(100% + .5rem); right:0; z-index:700; width:min(330px, 85vw); padding:.75rem; border:1px solid var(--ui-border); border-radius:10px; background:var(--ui-paper); color:var(--ui-text); box-shadow:0 12px 28px #0002; }
+.demo-profile-choices[hidden] { display:none; }
+.demo-profile-choices p { margin:0 0 .5rem; font-size:.8rem; }
+#showcase-bar .demo-profile-choices button { display:block; text-align:left; width:100%; padding:.75rem; border-radius:6px; background:var(--ui-paper); border:1px solid transparent; }
+#showcase-bar .demo-profile-choices button:hover, #showcase-bar .demo-profile-choices button[aria-current] { background:var(--ui-soft); border-color:var(--ui-accent); }
+#showcase-bar .demo-profile-choices strong { display:block; font-size:.9rem; }
+
+/* Keep contextual help from covering an open choice panel. */
+body:has(#demo-profile-choices:not([hidden])) #field-guide-popover { display:none !important; }
+.demo-profile-choices { top:auto; bottom:calc(100% + .5rem); max-height:60vh; overflow:auto; }

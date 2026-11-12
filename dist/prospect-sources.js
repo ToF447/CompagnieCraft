@@ -353,3 +353,44 @@ for (const source of window.ATELIER_PROSPECT_SOURCES) {
       next: 'Revalider la source du projet culturel.',
     });
 }
+
+// Dated archives, checked on 12 November 2026. No annual recurrence is inferred.
+window.ATELIER_FESTIVAL_HISTORY = [
+  {
+    name: 'Trajectoires',
+    city: 'Nantes',
+    period: 'Janvier à début février',
+    checked: '2026-11-12',
+    editions: [
+      {
+        start: '2026-01-15',
+        end: '2026-02-01',
+        url: 'https://festival-trajectoires.com/festival-et-partenaires/',
+      },
+      {
+        start: '2025-01-16',
+        end: '2025-01-31',
+        url: 'https://festival-trajectoires.com/edition-precedentes/',
+      },
+      {
+        start: '2024-01-11',
+        end: '2024-01-21',
+        url: 'https://festival-trajectoires.com/edition-precedentes/',
+      },
+    ],
+  },
+  {
+    name: 'Le Grand HUIT',
+    city: 'Nantes',
+    period: 'Début décembre (édition 2025)',
+    checked: '2026-11-12',
+    note: 'L’organisateur présente 2025 comme la dixième et dernière édition. Aucune reconduction à présumer.',
+    editions: [
+      {
+        start: '2025-12-04',
+        end: '2025-12-07',
+        url: 'https://honolulu.oro.fr/calendrier/le-grand-huit-10-2025',
+      },
+    ],
+  },
+];
