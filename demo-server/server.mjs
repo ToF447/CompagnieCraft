@@ -42,6 +42,11 @@ function fail(res, status, message) {
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, origin), api = url.pathname.startsWith('/api/');
+    // Keep one public origin, including for refresh requests protected by Origin.
+    if (url.origin === origin && (req.headers.host || '').split(':')[0].toLowerCase() === 'www.' + new URL(origin).hostname) {
+      res.writeHead(308, { Location: url.href, 'Cache-Control': 'no-store' });
+      return res.end();
+    }
     if (url.origin !== origin || url.pathname === '/api.php' || url.pathname === '/mcp' ||
         (api && !readApis.has(url.pathname))) return fail(res, 404, 'Service absent de la démonstration publique.');
     if (!['GET', 'HEAD'].includes(req.method) && !(req.method === 'POST' && url.pathname === '/api/opportunities'))

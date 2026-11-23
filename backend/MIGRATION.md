@@ -1,9 +1,15 @@
 # Migration autonome vers Hostinger
 
-État au 11 novembre 2026. La destination `compagniecraft.org` est provisionnée sur
-l’offre existante. La création d’un site vide ne constitue pas un déploiement de
-l’application. Les DNS de production doivent rester sur la version en service
-jusqu’à validation de la nouvelle installation.
+État au 23 novembre 2026. La démonstration publique est déployée sur Hostinger à
+https://compagniecraft.org, avec Node.js 24, HTTPS et ses services de recherche.
+Les DNS web pointent vers Hostinger ; les réglages de messagerie et les anciens
+enregistrements de vérification sont conservés. Le site ne demande plus de compte
+auprès de l’ancien fournisseur pour être visité.
+
+Ce transfert concerne la démonstration : aucune base privée ni contribution
+serveur de l’ancien hébergement n’a été importée. Les comptes individuels par
+e-mail et les services partagés ci-dessous ne sont pas activés sur ce domaine.
+Voir [l’exploitation de la démo](../docs/hostinger-demo.md).
 
 ## Objectif retenu
 

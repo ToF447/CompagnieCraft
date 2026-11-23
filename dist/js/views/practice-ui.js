@@ -69,11 +69,13 @@ function practiceImproView() {
   }</section></div></div>${practiceMoreView()}`;
 }
 views['atelier-creation'] = () =>
+  '<div class="practice-intro"><div class="practice-intro-copy">' +
   heading(
     'Préparer le jeu, nourrir les rencontres',
     'La boîte de création',
     'Une bibliothèque de références, des propositions d’atelier et des situations d’improvisation.',
   ) +
+  '</div><section class="practice-community" aria-labelledby="practice-community-title"><p class="eyebrow">Le savoir-faire circule</p><h2 id="practice-community-title">Enrichissons la communauté Craft</h2><p>Un exercice qui fonctionne, une idée de jeu, un texte ou une ressource à faire découvrir ? Votre expérience peut aider d’autres troupes.</p><a class="primary" href="#contribuer" data-help="Ouvre la boîte à idées pour préparer une proposition au collectif. Rien n’est publié automatiquement.">Proposer au collectif →</a><small>Un partage volontaire, à votre rythme.</small></section></div>' +
   `<div class="practice-tabs" role="group" aria-label="Ressources de création">${[
     ['library', 'Bibliothèque'],
     ['exercises', 'Exercices & séance'],

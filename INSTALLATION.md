@@ -2,9 +2,9 @@
 
 Cette notice explique comment lancer **la démonstration locale** sur Windows, macOS ou Linux, sans connaître la programmation.
 
-**Vous voulez seulement essayer l’application ?** La [démo en ligne](https://compagniecraft.org) s’utilise dans un navigateur sur ordinateur, tablette ou téléphone, sans installer Node.js ni télécharger le code. Son accès dépend de la protection de l’hébergement actuel. La suite de cette notice concerne les personnes qui souhaitent exécuter une copie sur leur ordinateur.
+**Vous voulez seulement essayer l’application ?** La [démo en ligne](https://compagniecraft.org) s’utilise dans un navigateur sur ordinateur, tablette ou téléphone, sans installer Node.js ni télécharger le code. Elle est hébergée sur Hostinger et accessible sans compte personnel. La suite de cette notice concerne les personnes qui souhaitent exécuter une copie sur leur ordinateur.
 
-**La démo locale est incomplète par rapport à la version hébergée.** Elle permet d’essayer les outils avec des données fictives. Elle ne crée pas de comptes individuels et n’active pas le partage entre plusieurs personnes. Une installation complète et autonome prête à l’emploi n’est pas fournie actuellement.
+**La démonstration, en ligne comme en local, utilise des données fictives.** Elle ne crée pas de comptes individuels et n’active pas le partage réel entre plusieurs personnes. Le service multiutilisateur complet reste à raccorder.
 
 ## 1. Comprendre ce que vous installez
 
