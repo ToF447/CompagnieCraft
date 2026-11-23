@@ -45,7 +45,7 @@ La priorité est de vérifier le parcours **spectacle → lieu → candidature �
 
 ## Essayer la démo en ligne
 
-La [démo en ligne](https://compagniecraft.org) s’ouvre dans un navigateur sur Windows, macOS, Linux, Android ou iOS, sans installation. Son accès dépend de la protection de l’hébergement actuel.
+La [démo en ligne](https://compagniecraft.org) s’ouvre dans un navigateur sur Windows, macOS, Linux, Android ou iOS, sans installation. Elle est hébergée sur Hostinger et accessible sans compte personnel.
 
 Le bouton **Essayer la démo complète** ouvre un parcours avec une troupe fictive : spectacles, candidatures, projet de tournée, budget, planning et feuille de route. Les textes, disponibilités et retours communautaires y disposent d’un bac à sable local clairement signalé. Aucune invitation, publication ou transaction réelle n’est déclenchée par ce scénario.
 

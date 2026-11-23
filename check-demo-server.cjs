@@ -38,6 +38,19 @@ const assert = require('node:assert/strict'),
       version = await (await get('/version.json')).json();
     assert.ok(html.includes('content="' + version.version + '"'));
     const config = await (await get('/server-config.js')).text();
+    const canonical = await new Promise((resolve, reject) => {
+      const req = require('node:http').get(
+        origin + '/',
+        { headers: { Host: 'www.127.0.0.1' } },
+        (res) => {
+          res.resume();
+          resolve({ status: res.statusCode, location: res.headers.location });
+        },
+      );
+      req.on('error', reject);
+    });
+    assert.equal(canonical.status, 308);
+    assert.equal(canonical.location, origin + '/');
     assert.ok(config.includes('ATELIER_DEMO_HOST=true'));
     assert.doesNotMatch(config, /chatgpt|openai|signin-with/i);
     for (const api of [
